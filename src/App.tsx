@@ -22,6 +22,7 @@ export const App = () => {
         <NavLink to="cart">cart</NavLink>
       </header>
       <main>
+
         <Routes>
           <Route path="/" element={<HomePage />} />
 
