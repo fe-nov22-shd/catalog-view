@@ -3,45 +3,10 @@
   scroll-behavior: smooth;
 }
 
-a {
-  margin: 20px;
+* {
+  box-sizing: border-box;
 }
 
- /* header */
-.nav {
-
-  &__link {
-    position: relative;
-    text-decoration: none;
-
-    color: #89939A;
-    text-transform: uppercase;
-    font-weight: 800;
-    font-size: 10px;
-    letter-spacing: 0.04em;
-
-    transition: color 0.3s ease;
-
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      height: 3px;
-      width: 100%;
-      transition: background-color .3s ease;
-      transform: translateX(-100%);
-    }
-
-    &--active {
-      color: #313237;
-
-      &::after {
-        background: #313237;
-      }
-    }
-
-    &:hover {
-      color: #313237;
-    }
-  }
+body {
+  overflow-x: hidden;
 }
