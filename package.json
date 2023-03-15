@@ -26,6 +26,7 @@
     "webpack": "^5.76.1"
   },
   "scripts": {
+    "lint": "npx eslint src",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
