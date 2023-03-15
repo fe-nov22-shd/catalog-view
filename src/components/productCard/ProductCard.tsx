@@ -40,6 +40,8 @@ export const ProductCard = () => {
         </p>
       </div>
 
+      <div className="product-card__divider"></div>
+
       <div className="product-card__details-container">
         <div className="product-card__details">
           <p
