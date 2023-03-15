@@ -1,0 +1,52 @@
+@import '../../generalStyles/colors';
+
+.header__icons {
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  display: none;
+
+  @media (min-width: 640px) {
+    display: flex;
+  }
+}
+
+.header__icon {
+  position: relative;
+
+  width: 48px;
+
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-left: 1px solid #ddd;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    transition: background-color .3s ease;
+  }
+
+  &--active {
+    color: $color__header-active-link;
+
+    &::after {
+      background-color: $color__header-active-link;
+    }
+  }
+
+  &:hover {
+    color: $color__header-active-link;
+  }
+
+  @media (min-width: 1440px) {
+    width: 64px;
+  }
+}
