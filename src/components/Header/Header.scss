@@ -10,8 +10,14 @@
 
   &__menu-btn {
     display: none;
+    border-left: 1px solid #ddd;
+    height: 100%;
+
     @media (max-width: 640px) {
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 48px;
     }
   }
 
