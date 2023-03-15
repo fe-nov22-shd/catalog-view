@@ -8,6 +8,7 @@ import { FavoritesPage } from './modules/FavoritesPage';
 import { NotFoundPage } from './modules/NotFoundPage';
 import { ShoppingCartPage } from './modules/ShoppingCartPage';
 import { ProductDetailsPage } from './modules/ProductDetailsPage';
+import React from 'react';
 export const App = () => {
   return (
     <div className="App">

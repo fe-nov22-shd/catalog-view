@@ -1,5 +1,16 @@
 
 
+
 a {
   margin: 20px;
+}
+p, h1 {
+  margin: 0;
+}
+button {
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
 }
