@@ -1,5 +1,5 @@
 import { HashRouter as Router } from 'react-router-dom';
-import './index.css';
+import './index.scss';
 import { App }  from './App';
 import React from 'react';
 import ReactDOM from 'react-dom';

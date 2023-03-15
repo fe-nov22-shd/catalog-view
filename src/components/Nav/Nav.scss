@@ -1,0 +1,68 @@
+@import '../../generalStyles/colors';
+
+.nav {
+  display: none;
+  padding-left: 32px;
+  height: 100%;
+
+  &__list {
+    margin: 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 100%;
+    list-style: none;
+  }
+
+  &__item {
+    height: 100%;
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    align-items: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    color: $color__header-link;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 12px;
+      font-family: 'Mont', sans-serif;
+
+    letter-spacing: 0.04em;
+    margin-right: 32px;
+
+    transition: color 0.3s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      height: 3px;
+      width: 100%;
+      transition: background-color .3s ease;
+    }
+
+    &--active {
+      color: $color__header-active-link;
+
+      &::after {
+        background: $color__header-active-link;
+      }
+    }
+
+    &:hover {
+      color: $color__header-active-link;
+    }
+  }
+
+  @media (min-width: 640px) {
+    display: block;
+  }
+  @media (min-width: 1440px) {
+    padding-left: 48px;
+  }
+}
