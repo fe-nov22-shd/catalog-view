@@ -9,6 +9,7 @@ import { FavoritesPage } from './modules/FavoritesPage';
 import { NotFoundPage } from './modules/NotFoundPage';
 import { ShoppingCartPage } from './modules/ShoppingCartPage';
 import { ProductDetailsPage } from './modules/ProductDetailsPage';
+
 import { Footer } from '../src/components/Footer/Footer';
 import { Header } from "../src/components/Header/Header";
 
