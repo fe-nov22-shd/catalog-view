@@ -10,6 +10,7 @@ import { FavoritesPage } from './modules/FavoritesPage';
 import { NotFoundPage } from './modules/NotFoundPage';
 import { ShoppingCartPage } from './modules/ShoppingCartPage';
 import { ProductDetailsPage } from './modules/ProductDetailsPage';
+import { Footer } from '../src/components/Footer/Footer'
 
 export const App = () => {
   return (
@@ -106,7 +107,7 @@ export const App = () => {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
-      <footer></footer>
+      <Footer />
     </div>
   );
 };
