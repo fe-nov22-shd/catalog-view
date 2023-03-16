@@ -1,5 +1,4 @@
 import './ProductCard.scss'
-// import heart from '../../img/heart.svg';
 import {ReactComponent as HeartRed} from '../../img/heart-red.svg';
 import {ReactComponent as Heart} from '../../img/heart.svg';
 
@@ -43,7 +42,6 @@ export const ProductCard = () => {
           ${price}
         </p>
       </div>
-
       <hr className="product-card__divider" />
 
       <div className="product-card__details-container">
@@ -98,8 +96,6 @@ export const ProductCard = () => {
             </button>
           )
         }
-
-
         <button
           type="button"
           className="product-card__button-favorite"

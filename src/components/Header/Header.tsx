@@ -1,5 +1,4 @@
 import React, { useCallback, useState } from 'react';
-import { Routes, Route, Navigate, NavLink } from 'react-router-dom';
 import './Header.scss';
 import { Logo } from '../Logo';
 import { Nav } from '../Nav';
