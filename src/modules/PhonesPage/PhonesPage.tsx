@@ -1,4 +1,5 @@
 import './PhonesPage.scss'
+import { Breadcrumbs } from "../Breadcrumbs/Breadcrumbs";
 import { Catalog } from '../../components/Catalog';
 import { Phone } from '../../types/Phone';
 import { useEffect, useState } from 'react';
@@ -10,7 +11,6 @@ export const PhonesPage = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
-  // const [searchParams] = useSearchParams();
 
   const getPhonesFromServer = async () => {
     setIsLoading(true);
@@ -29,10 +29,13 @@ export const PhonesPage = () => {
   }, []);
 
   return (
-    <Catalog
+    <>
+      <Breadcrumbs />
+      <Catalog
       isLoading={isLoading}
       hasError={hasError}
       phones={phones}
       />
-  );
-};
+    </>
+  )
+}
