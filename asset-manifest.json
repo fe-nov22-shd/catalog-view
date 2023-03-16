@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/catalog-view/static/css/main.c04c625a.css",
-    "main.js": "/catalog-view/static/js/main.b9834a5e.js",
+    "main.css": "/catalog-view/static/css/main.43cd0113.css",
+    "main.js": "/catalog-view/static/js/main.23dc070e.js",
     "static/media/logo.svg": "/catalog-view/static/media/logo.6e0f153969148a1c3800efdc4d689152.svg",
     "static/media/Error.gif": "/catalog-view/static/media/Error.2d3d08a8ba669f486d6d.gif",
     "static/media/Mont-Regular.otf": "/catalog-view/static/media/Mont-Regular.1d26d89f7339866d3133.otf",
@@ -9,18 +9,19 @@
     "static/media/Mont-Bold.otf": "/catalog-view/static/media/Mont-Bold.03c8c2f6127c1da0fc39.otf",
     "static/media/cart.svg": "/catalog-view/static/media/cart.0089c9921342187cd543a6d99b76fe2f.svg",
     "static/media/heart.svg": "/catalog-view/static/media/heart.0a756ff14a135ac4523ffcaacf319559.svg",
-    "static/media/Home.svg": "/catalog-view/static/media/Home.d4c29e4f137b3a79235a5293536d71a0.svg",
+    "static/media/Home.svg": "/catalog-view/static/media/Home.1816ab2ca60cac7cf0eb9e2fa68610f0.svg",
+    "static/media/heart-red.svg": "/catalog-view/static/media/heart-red.a3b711b5bd5e5f67f9a858dfc4cee232.svg",
     "static/media/close.svg": "/catalog-view/static/media/close.dc88a3f670a63fe2d422f38f1a422a00.svg",
     "static/media/burger.svg": "/catalog-view/static/media/burger.3eda38e880976ed7dd571e425464e71b.svg",
-    "static/media/VectorRight.svg": "/catalog-view/static/media/VectorRight.2a072ff1bf1fd396b30e9dec3a108dcb.svg",
+    "static/media/VectorRight.svg": "/catalog-view/static/media/VectorRight.a36e74fa66c087c3db88ae6b2cd1af65.svg",
+    "static/media/VectorLeft.svg": "/catalog-view/static/media/VectorLeft.4da65408a83ce96e639103b6de826e32.svg",
     "static/media/Vector.svg": "/catalog-view/static/media/Vector.61f2efdd28f6594a245bcd4bfb83f95d.svg",
-    "static/media/VectorLeft.svg": "/catalog-view/static/media/VectorLeft.f26374195e19e331e6ca021ec8218fbc.svg",
     "index.html": "/catalog-view/index.html",
-    "main.c04c625a.css.map": "/catalog-view/static/css/main.c04c625a.css.map",
-    "main.b9834a5e.js.map": "/catalog-view/static/js/main.b9834a5e.js.map"
+    "main.43cd0113.css.map": "/catalog-view/static/css/main.43cd0113.css.map",
+    "main.23dc070e.js.map": "/catalog-view/static/js/main.23dc070e.js.map"
   },
   "entrypoints": [
-    "static/css/main.c04c625a.css",
-    "static/js/main.b9834a5e.js"
+    "static/css/main.43cd0113.css",
+    "static/js/main.23dc070e.js"
   ]
 }
