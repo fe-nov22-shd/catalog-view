@@ -10,5 +10,8 @@
   ],
   "include": [
     "./src/**/*.ts"
-  ]
+  ],
+  "paths": {
+  "react-slick": ["node_modules/react-slick"]
+}
 }
