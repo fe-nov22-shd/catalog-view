@@ -20,7 +20,7 @@ export const App = () => {
     <GitProvider>
       <div className="App">
         <Header />
-        <main>
+        <main className='main'>
 
           <Routes>
             <Route path="/" element={<HomePage />} />
