@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "Mont";
+  src: url("/fonts/Mont-Regular.otf") format("opentype"),
+ }
+
+ @font-face {
+  font-family: "Mont";
+  src: url("/fonts/Mont-SemiBold.otf") format("opentype");
+  font-weight: 700;
+ }
+
+ @font-face {
+  font-family: "Mont";
+  src: url("/fonts/Mont-Bold.otf") format("opentype");
+  font-weight: 800;
+ }
+
+ $primary-c:  #313237;
+ $secondary-c: #89939a;
+
+ .sorting-panel {
+  font-family: 'Mont';
+  margin-bottom: 24px;
+
+  &__title {
+    color: $secondary-c;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+ }

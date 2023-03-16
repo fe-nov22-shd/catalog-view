@@ -22,7 +22,10 @@
  $elements-c: #e2e6e9;
 
 .container__width {
-  width: 272px;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  max-width: 280px;
   border: #89939a;
   box-sizing: border-box;
 }
@@ -34,7 +37,6 @@
 
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 32px;
 
   &__image {
@@ -47,6 +49,7 @@
     font-weight: 600;
     font-size: 14px;
     line-height: 21px;
+    height: 42px;
   }
 
   &__price-container {

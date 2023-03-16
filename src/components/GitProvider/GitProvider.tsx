@@ -27,7 +27,7 @@ export const GitProvider:React.FC<Props> = ({ children }) => (
           mobile: 0,
           tablet: 640,
           tabletXL: 768,
-          desktop: 1280,
+          desktop: 1200,
         },
       },
     })}
