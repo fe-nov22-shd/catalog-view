@@ -22,7 +22,7 @@ export const  Footer = () => {
               <Link className='navigation__link' to="/rights">Rights</Link>
         </nav>
         <div className="footer__scroll scroll">
-          <p className='scroll__text'>Back to top</p>
+          <p className='scroll__text'onClick={handleScrollToTop}>Back to top</p>
           <button className='scroll__button button' onClick={handleScrollToTop}>
             <img src={vector} alt="Vector" />
           </button>
