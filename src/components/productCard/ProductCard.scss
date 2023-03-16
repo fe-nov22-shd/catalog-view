@@ -15,11 +15,12 @@
   font-weight: 800;
  }
 
- $base-font-color: #313237;
- $secondary-font-color: #89939a;
- $favorite-button-collor: #b4bdc3;
 
-
+ $primary-c:  #313237;
+ $secondary-c: #89939a;
+ $green-c: #27ae60;
+ $red-c: #eb5757;
+ $elements-c: #e2e6e9;
 
 .container__width {
   width: 272px;
@@ -28,7 +29,7 @@
 }
 
 .product-card {
-  font-family: "Mont", 'Times New Roman', Times, serif;
+  font-family: "Mont", Arial, Helvetica, sans-serif;
   box-sizing: border-box;
   border: 1px solid #f3f3f3;
 
@@ -67,17 +68,22 @@
       text-decoration-line: line-through;
       font-size: 22px;
       font-weight: 700;
-      color: $secondary-font-color;
+      color: $secondary-c;
     }
   }
 
-  &__details-container {
-    border-top: 1px solid #e2e6e9;
-    margin-bottom: 16px;
+  &__divider {
+    border: none;
+    background-color: $elements-c;
+
+    display: block;
+    height: 1px;
+    width: 100%;
   }
 
   &__details-container {
     width: 100%;
+    margin: 16px 0;
   }
 
   &__details {
@@ -92,7 +98,11 @@
     margin-bottom: 8px;
 
     &__title {
-      color: $secondary-font-color;
+      color: $secondary-c;
+    }
+
+    &:last-child {
+      margin: 0;
     }
   }
 
@@ -105,34 +115,54 @@
   flex-grow: 1;
 
   height: 40px;
-  background-color: $base-font-color;
-  border: 1px solid $base-font-color;
+  background-color: $primary-c;
+  border: 1px solid $primary-c;
+  cursor: pointer;
 
   color: #fff;
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
   text-decoration: none;
+
+  &:hover {
+    box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
+    transition: background-color .3s ease;
+  }
+
+    &--added {
+      flex-grow: 1;
+      color: $green-c;
+      background-color: white;
+      border: 1px solid #e2e6e9;
+
+      &:hover {
+        color: $green-c;
+        border: 1px solid #e2e6e9;
+      }
+    }
   }
 
   &__button-favorite {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     height: 40px;
     width: 40px;
 
     background-color: #fff;
-    border: 1px solid $favorite-button-collor;
+    border: 1px solid $elements-c;
 
     margin-left: 8px;
+
+    &:hover {
+      background-color: white;
+      border: 1px solid $primary-c;
+      box-shadow: rgba(184, 187, 190, 0.1) 0px 4px 5px;
+      transition: background-color .3s ease;
+    }
   }
 }
 
-.icon-heart {
-  background: url(../../icons/heart.png) no-repeat;
-  height: 15px;
-  width: 15px;
-
-  display: block;
-  margin: auto;
-  width: 50%;
-}
 
