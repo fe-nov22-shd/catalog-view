@@ -3,6 +3,7 @@
 .footer {
   border-top: 1px solid #ddd;
   box-sizing: border-box;
+  margin: -20px;
 
 
 
@@ -12,10 +13,9 @@
     align-items: center;
     flex-wrap: wrap;
     padding: 21px 32px;
-    max-height: 96px;
+    height: 96px;
     max-width: 1200px;
     margin: 0 auto;
-
   }
 
   &__navigation {
