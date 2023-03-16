@@ -1,4 +1,7 @@
 import './ProductCard.scss'
+import {ReactComponent as HeartRed} from '../../img/heart-red.svg';
+import {ReactComponent as Heart} from '../../img/heart.svg';
+
 const phone = {
   // eslint-disable-next-line no-octal-escape
   image: 'https://fedox.com.ua/content/images/29/1080x1080l80bc20/p1400393752-apple-iphone-64gb.html-39499155136569.webp',
@@ -39,8 +42,7 @@ export const ProductCard = () => {
           ${price}
         </p>
       </div>
-
-      <div className="product-card__divider"></div>
+      <hr className="product-card__divider" />
 
       <div className="product-card__details-container">
         <div className="product-card__details">
@@ -72,17 +74,37 @@ export const ProductCard = () => {
       </div>
 
       <div className="product-card__button-container">
-        <button
-          type="button"
-          className="product-card__button"
-        >
-          Add to cart
-        </button>
+        {/* add condition if added to cart */}
+        {true
+          ? (
+            <button
+              type="button"
+              className="product-card__button"
+            >
+              Add to cart
+            </button>
+          )
+          : (
+            <button
+              type="button"
+              className="
+              product-card__button--added
+              product-card__button
+              "
+            >
+              Added
+            </button>
+          )
+        }
         <button
           type="button"
           className="product-card__button-favorite"
         >
-          <i className="icon-heart"/>
+          {/* add condition if added to favorite */}
+          {false
+            ? <Heart />
+            : <HeartRed />
+          }
         </button>
       </div>
     </div>
