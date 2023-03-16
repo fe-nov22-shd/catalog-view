@@ -17,7 +17,8 @@ export const App = () => {
   return (
     <div className="App">
       <Header />
-      <main>
+
+      <main className='main'>
 
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -42,8 +43,11 @@ export const App = () => {
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
+
+
       </main>
+
       <Footer />
-    </div>
+      </div>
   );
 };

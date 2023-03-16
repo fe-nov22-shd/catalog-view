@@ -5,3 +5,21 @@
 body {
   overflow-x: hidden;
 }
+
+.main{
+    min-height: calc(100vh - 96px - 48px);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+p, h1 {
+  margin: 0;
+}
+button {
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
