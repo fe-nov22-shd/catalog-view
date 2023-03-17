@@ -1,33 +1,25 @@
-import {  NavLink } from "react-router-dom";
-import classnames from 'classnames';
-
-import './HeaderIcons.scss';
+import React from 'react';
 import heart from '../../img/heart.svg';
 import cart from '../../img/cart.svg';
+import { NavIcon } from '../NavIcon';
 
-export const HeaderIcons = () => {
+type Props = {
+  closeMenu: () => void;
+};
+
+export const HeaderIcons: React.FC<Props> = ({ closeMenu }) => {
   return (
-    <nav className="header__icons">
-      <NavLink
-        className={({ isActive }) =>
-          classnames("header__icon", {
-            "header__icon--active": isActive,
-          })
-        }
+    <>
+      <NavIcon
         to="favourites"
-      >
-        <img src={heart} alt="heart" className='header__icon-img'/>
-      </NavLink>
-      <NavLink
-        className={({ isActive }) =>
-          classnames("header__icon", {
-            "header__icon--active": isActive,
-          })
-        }
+        title={<img src={heart} alt="heart" />}
+        closeMenu={closeMenu}
+      />
+      <NavIcon
         to="cart"
-      >
-        <img src={cart} alt="heart" className='header__icon-img'/>
-      </NavLink>
-    </nav>
+        closeMenu={closeMenu}
+        title={<img src={cart} alt="cart" />}
+      />
+    </>
   );
 };
