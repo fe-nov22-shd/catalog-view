@@ -1,29 +1,90 @@
+@import '../../generalStyles/mixins.scss';
+@import '../../generalStyles/colors.scss';
+@import '../../generalStyles/sizes.scss';
+
+.header .nav__list {
+  @include onTablet {
+    gap: 24px;
+  }
+
+  @include onDesktop {
+    gap: 64px;
+  }
+}
+
 .header {
-  box-sizing: border-box;
-  margin: 0 auto;
-  max-width: 1440px;
-  border-bottom: 1px solid #ddd;
+  font-family: 'Mont', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 3;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 48px;
-  padding-left: 16px;
 
-  &__menu-btn {
-    display: none;
-    border-left: 1px solid #ddd;
-    height: 100%;
+  height: $header-height-mobile;
 
-    @media (max-width: 640px) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 48px;
+  background-color: $color-white;
+  border-top: 1px solid $color-elements;
+  border-bottom: 1px solid $color-elements;
+
+  @include onDesktop {
+    height: $header-height-desktop;
+  }
+
+  &__logo {
+    padding: 0 16px;
+
+    @include onDesktop {
+      padding: 0 24px;
     }
   }
 
-  @media (min-width: 1440px) {
-    height: 64px;
-    padding-left: 24px;
+  &__links {
+
+    @include onTablet {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      height: 100%;
+    }
   }
- }
+
+  &__menu-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 48px;
+    height: 48px;
+
+    box-shadow: -1px 0px 0px $color-elements;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__icons {
+    display: none;
+
+    & .nav__item {
+      width: 48px;
+    }
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 100%;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      height: 100%;
+    }
+  }
+}

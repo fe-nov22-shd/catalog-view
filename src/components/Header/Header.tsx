@@ -1,11 +1,11 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import './Header.scss';
 import { Logo } from '../Logo';
 import { Nav } from '../Nav';
 import { HeaderIcons } from '../HeaderIcons';
 import close from '../../img/close.svg';
 import burger from '../../img/burger.svg';
-import Grid from "@mui/material/Grid";
+import { BurgerMenu } from '../BurgerMenu';
 
 export const Header: React.FC = () => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
@@ -14,25 +14,44 @@ export const Header: React.FC = () => {
     setIsMenuOpened(current => !current);
   }, [])
 
+  const closeMenu = useCallback(() => {
+    setIsMenuOpened(false);
+  }, [])
+
+    useEffect(
+      () =>
+        isMenuOpened
+          ? document.body.classList.add("page--with-menu")
+          : document.body.classList.remove("page--with-menu"),
+      [isMenuOpened]
+    );
+
   return (
-    <Grid container rowSpacing={1} columnSpacing={3}>
-      <Grid item tablet={12} tabletXL={12} desktop={12} mobile={12}>
-        <header className="header">
-          <Logo />
-
-          <Nav />
-
-          <HeaderIcons />
-
-          <div className="header__menu-btn">
-            {isMenuOpened ? (
-              <img src={close} alt="close" onClick={toggleMenu} />
-            ) : (
-              <img src={burger} alt="burger" onClick={toggleMenu} />
-            )}
+    <>
+      <header className="header page__header">
+        <div className="header__links">
+          <div className="header__logo">
+            <Logo />
           </div>
-        </header>
-      </Grid>
-    </Grid>
+          <div className="header__nav">
+            <Nav closeMenu={closeMenu} />
+          </div>
+        </div>
+
+        <div className="header__menu-btn">
+          {isMenuOpened ? (
+            <img src={close} alt="close" onClick={toggleMenu} />
+          ) : (
+            <img src={burger} alt="burger" onClick={toggleMenu} />
+          )}
+        </div>
+
+        <div className="header__icons">
+          <HeaderIcons closeMenu={closeMenu} />
+        </div>
+      </header>
+
+      <BurgerMenu isMenuOpen={isMenuOpened} closeMenu={closeMenu} />
+    </>
   );
 };
