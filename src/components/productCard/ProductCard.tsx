@@ -14,7 +14,7 @@ import { useCallback, useState } from 'react';
 //   capacity: '64 GB',
 //   ram: '4 GB'
 // }
-const image = 'https://fedox.com.ua/content/images/29/1080x1080l80bc20/p1400393752-apple-iphone-64gb.html-39499155136569.webp'
+// const image = 'https://fedox.com.ua/content/images/29/1080x1080l80bc20/p1400393752-apple-iphone-64gb.html-39499155136569.webp'
 
 type Props = {
   phone: Phone,
@@ -24,7 +24,7 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
   const [isAddedToCart, setAddedToCart] = useState(false);
   const [isAddedToFavorite, setAddedToFavorite] = useState(false);
   const {
-    // image,
+    image,
     name,
     fullPrice,
     price,
@@ -43,11 +43,13 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
 
   return (
     <div className="product-card container__width">
-      <img
-        src={image}
-        alt={name}
-        className="product-card__image"
-      />
+      <div className="product-card__image-container">
+        <img
+          src={image}
+          alt={name}
+          className="product-card__image"
+        />
+      </div>
       <h1 className="product-card__title">
         {name}
       </h1>
@@ -92,7 +94,6 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
       </div>
 
       <div className="product-card__button-container">
-        {/* add condition if added to cart */}
         {isAddedToCart
           ? (
             <button
@@ -121,7 +122,6 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
           onClick={handleFavoriteButton}
           className="product-card__button-favorite"
         >
-          {/* add condition if added to favorite */}
           {isAddedToFavorite
             ? <HeartRed />
             : <Heart />
