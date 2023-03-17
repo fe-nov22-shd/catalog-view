@@ -20,24 +20,24 @@ interface Props {
 }
 
 export const LocaleStorageProvider: React.FC<Props> = ({ children }) => {
-const [favoruites, setFavoruites] = useLocalStorage<Phone[]>('favoruite', [])
-const [cartItem, setCartItem] = useLocalStorage<Phone[]>('cart', [])
+const [favoruites, setFavoruites] = useLocalStorage<Phone[]>('favoruite', []);
+const [cartItem, setCartItem] = useLocalStorage<Phone[]>('cart', []);
 
 
 const addToFavoruite = (phone: Phone) => {
-  setFavoruites((prevState) => {
-
-    return [...prevState, phone ]
+  setFavoruites(prevState => {
+    prevState.push(phone)
+    return prevState;
   }
-);
+)
 }
 
 const addToCart = (phone: Phone) => {
-  setCartItem((prevState) => {
-    return [...prevState, phone ]
-
+  setCartItem(prevState => {
+    prevState.push(phone)
+    return prevState;
   }
-);
+)
 }
 
 const removeFromFavoruite = (phone: Phone) => {
@@ -46,7 +46,7 @@ const removeFromFavoruite = (phone: Phone) => {
 }
 
 const removeFromCart = (phone: Phone) => {
-  const filteredCart = favoruites?.filter(fav => fav.id !== phone.id);
+  const filteredCart = cartItem?.filter(fav => fav.id !== phone.id);
   setCartItem(filteredCart);
 }
 
