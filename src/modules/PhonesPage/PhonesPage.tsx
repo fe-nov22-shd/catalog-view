@@ -16,7 +16,7 @@ export const PhonesPage = () => {
     setIsLoading(true);
     try {
       const phonesFromServer = await getPhones();
-      setPhones(phonesFromServer);
+      setPhones(phonesFromServer.phones);
     } catch {
       setHasError(true);
     } finally {
