@@ -1,20 +1,10 @@
-import './ProductCard.scss'
+import {useContext} from 'react';
+import './ProductCard.scss';
 import {ReactComponent as HeartRed} from '../../img/heart-red.svg';
 import {ReactComponent as Heart} from '../../img/heart.svg';
 import { Phone } from '../../types/Phone';
 import { useCallback, useState } from 'react';
-
-// const phone = {
-//   // eslint-disable-next-line no-octal-escape
-//   image: 'https://fedox.com.ua/content/images/29/1080x1080l80bc20/p1400393752-apple-iphone-64gb.html-39499155136569.webp',
-//   title: 'Apple iPhone Xs 64GB Silver (iMT9G2FS/A)',
-//   price: 899,
-//   priceWithdiscount: 799,
-//   screen: '5.8” OLED',
-//   capacity: '64 GB',
-//   ram: '4 GB'
-// }
-// const image = 'https://fedox.com.ua/content/images/29/1080x1080l80bc20/p1400393752-apple-iphone-64gb.html-39499155136569.webp'
+import { LocaleStorageContext } from '../Context';
 
 type Props = {
   phone: Phone,
@@ -35,10 +25,12 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
 
   const handleCartButton = useCallback(() => {
     setAddedToCart(current => !current);
+    addToCart(phone);
   }, [])
 
   const handleFavoriteButton = useCallback(() => {
     setAddedToFavorite(current => !current);
+    addToFavoruite(phone)
   }, [])
 
   return (
