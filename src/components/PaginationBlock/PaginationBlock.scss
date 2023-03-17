@@ -4,12 +4,14 @@
   }
 }
 
-.catalog-content {
+.pagination-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 24px;
+
+
+  margin-bottom: 64px;
 
   @include onTablet {
     margin-bottom: 40px;
   }
- }
+}

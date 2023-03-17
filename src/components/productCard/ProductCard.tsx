@@ -6,18 +6,6 @@ import { Phone } from '../../types/Phone';
 import { useCallback, useState } from 'react';
 import { LocaleStorageContext } from '../Context';
 
-// const phone = {
-//   // eslint-disable-next-line no-octal-escape
-//   image: 'https://fedox.com.ua/content/images/29/1080x1080l80bc20/p1400393752-apple-iphone-64gb.html-39499155136569.webp',
-//   title: 'Apple iPhone Xs 64GB Silver (iMT9G2FS/A)',
-//   price: 899,
-//   priceWithdiscount: 799,
-//   screen: '5.8” OLED',
-//   capacity: '64 GB',
-//   ram: '4 GB'
-// }
-const image = 'https://fedox.com.ua/content/images/29/1080x1080l80bc20/p1400393752-apple-iphone-64gb.html-39499155136569.webp'
-
 type Props = {
   phone: Phone,
 }
@@ -25,9 +13,8 @@ type Props = {
 export const ProductCard: React.FC<Props> = ({ phone }) => {
   const [isAddedToCart, setAddedToCart] = useState(false);
   const [isAddedToFavorite, setAddedToFavorite] = useState(false);
-  const { addToCart, addToFavoruite } = useContext(LocaleStorageContext)
   const {
-    // image,
+    image,
     name,
     fullPrice,
     price,
@@ -48,11 +35,13 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
 
   return (
     <div className="product-card container__width">
-      <img
-        src={image}
-        alt={name}
-        className="product-card__image"
-      />
+      <div className="product-card__image-container">
+        <img
+          src={image}
+          alt={name}
+          className="product-card__image"
+        />
+      </div>
       <h1 className="product-card__title">
         {name}
       </h1>
@@ -97,7 +86,6 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
       </div>
 
       <div className="product-card__button-container">
-        {/* add condition if added to cart */}
         {isAddedToCart
           ? (
             <button
@@ -126,7 +114,6 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
           onClick={handleFavoriteButton}
           className="product-card__button-favorite"
         >
-          {/* add condition if added to favorite */}
           {isAddedToFavorite
             ? <HeartRed />
             : <Heart />

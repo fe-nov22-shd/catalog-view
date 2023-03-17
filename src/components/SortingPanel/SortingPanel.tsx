@@ -3,11 +3,29 @@ import Grid from '@mui/material/Grid';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 
-export const SortingPanel = () => {
-  const options = [
-    'one', 'two', 'three'
-  ];
-  const defaultOption = options[0];
+import { useSearchParams } from 'react-router-dom';
+import { Sort } from '../../types/Sort';
+
+type Props = {
+  getNumberOfItems: (a:string) => void
+}
+
+export const SortingPanel:React.FC<Props> = ({ getNumberOfItems }) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const sortingOptions = ['None', Sort.Newest, Sort.Cheapest, Sort.Alphabetically];
+  const defaultSorting = sortingOptions[0];
+  const itemsCount = [ '4', '8', '16', 'all'];
+  const defaultCount = itemsCount[2];
+
+  const handleSorting = ({value}) => {
+    value !== 'None'
+      ? setSearchParams({sort: value})
+      : setSearchParams({sort: null})
+  };
+
+  const handleItemsOnCount = ({value}) => {
+    getNumberOfItems(value)
+  }
 
   return (
 
@@ -21,16 +39,23 @@ export const SortingPanel = () => {
             <div className="sorting-panel__item">
               <h2 className="sorting-panel__title"> Sort by</h2>
               <Dropdown
-                options={options}
-                value={defaultOption}
-                placeholder="Select an option" />
+                options={sortingOptions}
+                value={defaultSorting}
+                placeholder="Select an option"
+                onChange={handleSorting}
+              />
             </div>
           </Grid>
 
           <Grid item tablet={6} tabletXL={3} desktop={3} mobile={2}>
             <div className="sorting-panel__item">
               <h2 className="sorting-panel__title"> Items on page </h2>
-              <Dropdown options={options} value={defaultOption} placeholder="Select an option" />
+              <Dropdown
+                options={itemsCount}
+                value={defaultCount}
+                placeholder="Select an option"
+                onChange={handleItemsOnCount}
+              />
             </div>
           </Grid>
         </Grid>
