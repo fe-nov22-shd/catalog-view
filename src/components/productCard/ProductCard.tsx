@@ -1,8 +1,10 @@
-import './ProductCard.scss'
+import {useContext} from 'react';
+import './ProductCard.scss';
 import {ReactComponent as HeartRed} from '../../img/heart-red.svg';
 import {ReactComponent as Heart} from '../../img/heart.svg';
 import { Phone } from '../../types/Phone';
 import { useCallback, useState } from 'react';
+import { LocaleStorageContext } from '../Context';
 
 // const phone = {
 //   // eslint-disable-next-line no-octal-escape
@@ -23,6 +25,7 @@ type Props = {
 export const ProductCard: React.FC<Props> = ({ phone }) => {
   const [isAddedToCart, setAddedToCart] = useState(false);
   const [isAddedToFavorite, setAddedToFavorite] = useState(false);
+  const { addToCart, addToFavoruite } = useContext(LocaleStorageContext)
   const {
     // image,
     name,
@@ -35,10 +38,12 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
 
   const handleCartButton = useCallback(() => {
     setAddedToCart(current => !current);
+    addToCart(phone);
   }, [])
 
   const handleFavoriteButton = useCallback(() => {
     setAddedToFavorite(current => !current);
+    addToFavoruite(phone)
   }, [])
 
   return (
