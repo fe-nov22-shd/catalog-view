@@ -4,7 +4,6 @@ import { LocaleStorageContext } from "../../components/Context";
 import { Phone } from "../../types/Phone";
 
 import './CartItem.scss'
-
 type Props = {
   good: Phone,
 }

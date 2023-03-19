@@ -2,11 +2,13 @@ import { useContext } from 'react';
 import './ShoppingCartPage.scss'
 import { CartItem } from '../../components/CartItem';
 import Grid from '@mui/material/Grid';
+
 import { LocaleStorageContext } from "../../components/Context";
 
 export const ShoppingCartPage: React.FC = () => {
 
   // const [countEachGood, setCountEachGood] = useState([])
+
 
   // const handlerCounter = (goodId: number) => {
   //   let good = countEachGood.find(({ id }) => id === goodId)
@@ -36,7 +38,6 @@ export const ShoppingCartPage: React.FC = () => {
         <h1 className="cart-page__title">
           Cart
         </h1>
-
           <Grid container rowSpacing={1} columnSpacing={2}>
             <Grid item tablet={12} desktop={8} mobile={12}>
             {countItems
@@ -50,6 +51,7 @@ export const ShoppingCartPage: React.FC = () => {
               <p>Cart is empty</p>
             )
             }
+
             </Grid>
             <Grid item tablet={12} desktop={4} mobile={12}>
               <div className="cart-page__checkout_block">
