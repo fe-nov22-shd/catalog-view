@@ -14,18 +14,27 @@ type Props = {
   hasError:boolean;
   phones: Phone[]
   phonesAmount: number,
+  itemsOnPage:string;
   getNumberOfItems: (a:string) => void;
   numberOfPages: number;
   getCurrentPage: (a:string) => void,
+  currentPage:string;
+  getSortingType: (a:string) => void,
+  sortingType: string
+
 }
 export const Catalog: React.FC<Props> = ({
   isLoading,
   hasError, // need to add notification
   phones,
   phonesAmount,
+  itemsOnPage,
   getNumberOfItems,
   numberOfPages,
-  getCurrentPage
+  getCurrentPage,
+  currentPage,
+  getSortingType,
+  sortingType,
 }) => {
 
   return (
@@ -34,14 +43,20 @@ export const Catalog: React.FC<Props> = ({
       <h2 className="Catalog__items-count"> {phonesAmount} models </h2>
 
 
-      <SortingPanel getNumberOfItems={getNumberOfItems}/>
+      <SortingPanel
+        getNumberOfItems={getNumberOfItems}
+        itemsOnPage={itemsOnPage}
+        getSortingType={getSortingType}
+        sortingType={sortingType}
+      />
 
       {isLoading
         ? <Loader />
         : (
           <>
             <CatalogContent phones={phones}/>
-            <PaginationBlock 
+            <PaginationBlock
+              currentPage={currentPage}
               numberOfPages={numberOfPages}
               getCurrentPage={getCurrentPage}
             />
