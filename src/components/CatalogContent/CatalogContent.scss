@@ -1,0 +1,15 @@
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+.catalog-content {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+
+  @include onTablet {
+    margin-bottom: 40px;
+  }
+ }

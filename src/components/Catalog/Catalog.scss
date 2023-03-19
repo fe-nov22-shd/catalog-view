@@ -1,0 +1,69 @@
+@font-face {
+  font-family: "Mont";
+  src: url("/fonts/Mont-Regular.otf") format("opentype"),
+ }
+
+ @font-face {
+  font-family: "Mont";
+  src: url("/fonts/Mont-SemiBold.otf") format("opentype");
+  font-weight: 700;
+ }
+
+ @font-face {
+  font-family: "Mont";
+  src: url("/fonts/Mont-Bold.otf") format("opentype");
+  font-weight: 800;
+ }
+
+ $primary-c:  #313237;
+ $secondary-c: #89939a;
+ $green-c: #27ae60;
+ $red-c: #eb5757;
+ $elements-c: #e2e6e9;
+
+
+ @mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+  @mixin onDesktop {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+
+ .Catalog {
+  font-family: "Mont", Arial, Helvetica, sans-serif;
+  max-width: 1200px;
+  min-width: 320px;
+  padding: 0 16px;
+
+  @include onTablet {
+    padding: 0 24px;
+  }
+
+  @include onDesktop {
+    padding: 0 32px;
+  }
+
+  &__title {
+    font-family: 'Mont';
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 56px;
+    margin-bottom: 8px;
+  }
+
+  &__items-count {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: $secondary-c;
+
+    margin-bottom: 40px;
+  }
+ }
+
+

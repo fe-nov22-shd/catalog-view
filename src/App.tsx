@@ -20,13 +20,13 @@ export const App = () => {
     <GitProvider>
       <div className="App">
         <Header />
-        <main>
-
+        <main className='main'>
           <Routes>
             <Route path="/" element={<HomePage />} />
 
             <Route path="phones">
               <Route index element={<PhonesPage />} />
+              <Route path=":slug" element={<PhonesPage />} />
 
               <Route path=":phoneId" element={<ProductDetailsPage />} />
             </Route>

@@ -1,0 +1,17 @@
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+
+
+  margin-bottom: 64px;
+
+  @include onTablet {
+    margin-bottom: 40px;
+  }
+}
