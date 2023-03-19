@@ -63,7 +63,8 @@ $secondary-font-color: #89939a;
     line-height: 41px;
     color: $base-font-color;
 
-    &::before {
+    &:before {
+
       content: '$';
     }
   }

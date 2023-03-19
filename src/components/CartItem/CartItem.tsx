@@ -1,9 +1,9 @@
 import React from "react";
 import { useContext } from 'react';
-import './CartItem.scss'
 import { LocaleStorageContext } from "../../components/Context";
 import { Phone } from "../../types/Phone";
 
+import './CartItem.scss'
 type Props = {
   good: Phone,
 }
