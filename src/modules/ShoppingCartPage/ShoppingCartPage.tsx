@@ -1,12 +1,12 @@
+import { useContext } from 'react';
 import './ShoppingCartPage.scss'
 import { CartItem } from '../../components/CartItem';
 import Grid from '@mui/material/Grid';
-import { useContext, useState } from 'react';
 import { LocaleStorageContext } from "../../components/Context";
 
 export const ShoppingCartPage: React.FC = () => {
 
-  const [countEachGood, setCountEachGood] = useState([])
+  // const [countEachGood, setCountEachGood] = useState([])
 
   // const handlerCounter = (goodId: number) => {
   //   let good = countEachGood.find(({ id }) => id === goodId)
@@ -26,9 +26,6 @@ export const ShoppingCartPage: React.FC = () => {
   const countItems = cartItems.length;
   const totalCost: number = cartItems.reduce((a, b) => a + b.price, 0);
 
-  console.log(totalCost)
-  console.log(countItems)
-  console.log(cartItems)
   return (
       <div className="cart-page">
         <div className="cart-page__btn-back">
@@ -39,13 +36,20 @@ export const ShoppingCartPage: React.FC = () => {
         <h1 className="cart-page__title">
           Cart
         </h1>
+
           <Grid container rowSpacing={1} columnSpacing={2}>
             <Grid item tablet={12} desktop={8} mobile={12}>
-              <div className="cart-page__card-container">
-                {cartItems.map(good => (
-                  <CartItem key={good.id} good={good} />
-                ))}
-              </div>
+            {countItems
+            ? (
+                <div className="cart-page__card-container">
+                    {cartItems.map(good => (
+                      <CartItem key={good.id} good={good} />
+                    ))}
+                </div>
+            ) : (
+              <p>Cart is empty</p>
+            )
+            }
             </Grid>
             <Grid item tablet={12} desktop={4} mobile={12}>
               <div className="cart-page__checkout_block">
