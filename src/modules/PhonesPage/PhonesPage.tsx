@@ -8,13 +8,18 @@ import { getPhonesData } from '../../api/getPhonesData';
 import { NumberOfItems } from '../../types/NumberOfItemsOnPage';
 import { getSearchWith } from '../../utils/searchHelper';
 import { getNumberOfPages } from '../../utils/getNumberOfPages';
+import { Sort } from '../../types/Sort';
 
 export const PhonesPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
+
   const [phones, setPhones] = useState<Phone[]>([]);
   const [phonesAmount, setPhonesAmount] = useState(0);
+
+  const [sortingType, setSortingType] = useState<Sort|''>('');
   const [itemsOnPage, setItemsOnPage] = useState<NumberOfItems>('16')
+
   const [currentPage, setCurrentPage] = useState('1');
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -32,29 +37,32 @@ export const PhonesPage = () => {
     }
   };
 
-  const applyPaginationQuery = useCallback(
-    (page:string, count:string) => {
+  const applyPaginationQuery = useCallback((
+    sortType: Sort| '',
+    page:string,
+    count:string
+  ) => {
       setSearchParams(getSearchWith(
         searchParams,
-        {
+        { sort: sortType || null,
           page: page,
           perPage: count,
         }
-    ))}, []
-  )
+    ))}, []);
 
-  const location = useLocation()
+  const location = useLocation();
   const searchQuery = location.search;
   const numberOfPages = getNumberOfPages(phonesAmount, itemsOnPage);
 
-  const getNumberOfItems = (value) => setItemsOnPage(value)
+  const getNumberOfItems = (value) => setItemsOnPage(value);
   const getCurrentPage = (value) => setCurrentPage(value);
+  const getSortingType = (value) => setSortingType(value);
 
   useEffect(() => {
-    applyPaginationQuery(currentPage, itemsOnPage);
+    applyPaginationQuery(sortingType, currentPage, itemsOnPage);
     getPhonesFromServer(searchQuery);
-  }, [searchQuery, itemsOnPage, currentPage]);
-  
+  }, [sortingType, searchQuery, itemsOnPage, currentPage]);
+
   return (
     <>
       <Breadcrumbs />
@@ -64,8 +72,12 @@ export const PhonesPage = () => {
       phones={phones}
       phonesAmount={phonesAmount}
       getNumberOfItems={getNumberOfItems}
+      itemsOnPage={itemsOnPage}
       numberOfPages={numberOfPages}
       getCurrentPage={getCurrentPage}
+      currentPage={currentPage}
+      getSortingType={getSortingType}
+      sortingType={sortingType}
       />
     </>
   )

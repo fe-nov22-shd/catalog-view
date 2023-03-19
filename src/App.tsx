@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.scss';
-import { GitProvider } from './components/GitProvider/GitProvider';
 
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { HomePage } from './modules/HomePage';
@@ -17,7 +16,6 @@ import { Header } from "../src/components/Header/Header";
 
 export const App = () => {
   return (
-    <GitProvider>
       <div className="App">
         <Header />
         <main className='main'>
@@ -48,7 +46,5 @@ export const App = () => {
         </main>
         <Footer />
       </div>
-    </GitProvider>
-
   );
 };
