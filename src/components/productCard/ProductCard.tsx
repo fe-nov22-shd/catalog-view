@@ -1,10 +1,10 @@
-// import {useContext} from 'react';
+import {useContext} from 'react';
 import './ProductCard.scss';
 import {ReactComponent as HeartRed} from '../../img/heart-red.svg';
 import {ReactComponent as Heart} from '../../img/heart.svg';
 import { Phone } from '../../types/Phone';
 import { useCallback, useState } from 'react';
-// import { LocaleStorageContext } from '../Context';
+import { LocaleStorageContext } from '../Context';
 
 type Props = {
   phone: Phone,
