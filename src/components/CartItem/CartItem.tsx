@@ -1,8 +1,22 @@
 import React from "react";
-import photo from './00.jpg'
+import { useContext } from 'react';
 import './CartItem.scss'
+import { LocaleStorageContext } from "../../components/Context";
+import { Phone } from "../../types/Phone";
 
-export const CartItem:React.FC = () => {
+type Props = {
+  good: Phone,
+}
+export const CartItem:React.FC<Props> = ({ good }) => {
+  const { name,
+    price,
+    image,
+  } = good;
+
+  const { removeFromCart } = useContext(LocaleStorageContext);
+  const handleClick = () => {
+    removeFromCart(good);
+  }
 
   return (
     <div className="cart-page__card">
@@ -10,18 +24,19 @@ export const CartItem:React.FC = () => {
         <div className='cart-page__btn-closer-wrapper'>
           <button
             type="button"
-            className="cart-page__btn-closer">
+            className="cart-page__btn-closer"
+            onClick={ handleClick }>
               ×
           </button>
         </div>
         <div className='cart-page__image-wrapper'>
           <img
-          src={photo}
+          src={image}
           alt="apple-iphone-11-pro-max"
           className="cart-page__image"/>
         </div>
         <p className="cart-page__name">
-          Apple iPhone 14 Pro 128GB Silver (MQ023)
+          {name}
         </p>
       </div>
       <div className='cart-page__right-part-wrapper'>
@@ -31,7 +46,7 @@ export const CartItem:React.FC = () => {
           <button className="cart-page__btn-card-counter">+</button>
         </div>
         <p className="cart-page__card-price">
-          $1999
+          {price}
         </p>
       </div>
     </div>
