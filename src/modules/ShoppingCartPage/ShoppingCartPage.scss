@@ -64,7 +64,6 @@ $secondary-font-color: #89939a;
     color: $base-font-color;
 
     &:before {
-
       content: '$';
     }
   }
@@ -79,7 +78,7 @@ $secondary-font-color: #89939a;
   }
 
   &__btn-checkout {
-    font-family: "Mont";
+    display: flex;
     background-color: $base-font-color;
     color:#FFFFFF;
     width: 100%;
@@ -89,8 +88,10 @@ $secondary-font-color: #89939a;
     line-height: 21px;
     height: 48px;
     position: relative;
-    outline: none;
-    border: none;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
 
     &:hover {
       box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
@@ -107,5 +108,4 @@ $secondary-font-color: #89939a;
       background-color: #E2E6E9;
     }
   }
-
 }

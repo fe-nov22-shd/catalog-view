@@ -1,19 +1,23 @@
 import React from "react";
 import { useContext } from 'react';
-import { LocaleStorageContext } from "../../components/Context";
+import { LocaleStorageContext } from "../Context";
 import { Phone } from "../../types/Phone";
 
-import './CartItem.scss'
+import './CartItems.scss'
+
 type Props = {
-  good: Phone,
+  good: Phone;
+  count: number;
 }
-export const CartItem:React.FC<Props> = ({ good }) => {
+export const CartItems:React.FC<Props> = ({ good, count }) => {
   const { name,
     price,
     image,
   } = good;
+  const isDisabledToRemove = count <= 1;
+  const isDisabledToAdd = count >= 100;
+  const { addToCart, removeFromCart, removeOneCart } = useContext(LocaleStorageContext);
 
-  const { removeFromCart } = useContext(LocaleStorageContext);
   const handleClick = () => {
     removeFromCart(good);
   }
@@ -25,7 +29,9 @@ export const CartItem:React.FC<Props> = ({ good }) => {
           <button
             type="button"
             className="cart-page__btn-closer"
-            onClick={ handleClick }>
+            onClick={ handleClick }
+          >
+
               ×
           </button>
         </div>
@@ -41,9 +47,17 @@ export const CartItem:React.FC<Props> = ({ good }) => {
       </div>
       <div className='cart-page__right-part-wrapper'>
         <div className="cart-page__card-counter">
-          <button className="cart-page__btn-card-counter">-</button>
-          <p className="cart-page__card-count">1</p>
-          <button className="cart-page__btn-card-counter">+</button>
+          <button
+            className="cart-page__btn-card-counter"
+            onClick={() => removeOneCart(good)}
+            disabled={isDisabledToRemove}
+          >-</button>
+          <p className="cart-page__card-count">{count}</p>
+          <button
+            className="cart-page__btn-card-counter"
+            onClick={() => addToCart(good)}
+            disabled={isDisabledToAdd}
+          >+</button>
         </div>
         <p className="cart-page__card-price">
           {price}
