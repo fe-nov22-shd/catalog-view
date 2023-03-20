@@ -75,8 +75,8 @@ const removeFromCart = (phone: Phone) => {
 
 const contextValue = useMemo(() => (
   { favoruites, cartItems, addToFavoruite, removeFromFavoruite, removeFromCart, addToCart, removeOneCart }
-), [cartItems, favoruites]);
 // eslint-disable-next-line react-hooks/exhaustive-deps
+), [cartItems, favoruites]);
 
 return (
   <LocaleStorageContext.Provider value={contextValue}>
