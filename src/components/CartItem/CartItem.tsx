@@ -7,14 +7,16 @@ import './CartItem.scss'
 
 type Props = {
   good: Phone;
+  count: number;
 }
-export const CartItems:React.FC<Props> = ({ good }) => {
-
+export const CartItems:React.FC<Props> = ({ good, count }) => {
   const { name,
     price,
     image,
   } = good;
-  const { addToCart, removeFromCart } = useContext(LocaleStorageContext);
+  const isDisabledToRemove = count <= 1;
+  const isDisabledToAdd = count >= 100;
+  const { addToCart, removeFromCart, removeOneCart } = useContext(LocaleStorageContext);
   const handleClick = () => {
     removeFromCart(good);
   }
@@ -45,10 +47,15 @@ export const CartItems:React.FC<Props> = ({ good }) => {
         <div className="cart-page__card-counter">
           <button
             className="cart-page__btn-card-counter"
-            onClick={() => addToCart(good)}
+            onClick={() => removeOneCart(good)}
+            disabled={isDisabledToRemove}
           >-</button>
-          <p className="cart-page__card-count">1</p>
-          <button className="cart-page__btn-card-counter">+</button>
+          <p className="cart-page__card-count">{count}</p>
+          <button
+            className="cart-page__btn-card-counter"
+            onClick={() => addToCart(good)}
+            disabled={isDisabledToAdd}
+          >+</button>
         </div>
         <p className="cart-page__card-price">
           {price}

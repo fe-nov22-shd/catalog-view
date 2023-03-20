@@ -10,11 +10,11 @@ export type CartItem = {
 type ContextType = {
   favoruites: Phone[] | undefined,
   cartItems: CartItem[] | undefined,
-  addToFavoruite: (phone: Phone | undefined) => void,
+  addToFavoruite: (phone: Phone) => void,
   addToCart: (phone: Phone) => void,
-  removeFromFavoruite: (phone: Phone | undefined) => void;
+  removeFromFavoruite: (phone: Phone) => void;
   removeFromCart: (phone: Phone) => void;
-
+  removeOneCart: (phone: Phone) => void;
 }
 
 
@@ -26,18 +26,15 @@ interface Props {
 
 export const LocaleStorageProvider: React.FC<Props> = ({ children }) => {
 const [favoruites, setFavoruites] = useLocalStorage<Phone[]>('favoruite', []);
-// const [cartItems, setcartItems] = useLocalStorage<Phone[]>('cart', []);
 const [cartItems, setCartItems] = useLocalStorage<CartItem[]>('cart', []);
 
 const addToCart = (phone: Phone) => {
   let cartItem = cartItems.find(({ good }) => good.id === phone.id);
-  console.log(cartItem)
   if (!cartItem) {
     cartItem = {
       good: phone,
       count: 1,
     }
-  console.log(cartItem)
 
     setCartItems(prevState => {
       prevState.push(cartItem);
@@ -47,6 +44,15 @@ const addToCart = (phone: Phone) => {
   }
 
   cartItem.count++;
+  setCartItems([...cartItems])
+}
+
+const removeOneCart = (phone: Phone) => {
+  let cartItem = cartItems.find(({ good }) => good.id === phone.id);
+  if (cartItem.count > 1) {
+    cartItem.count--;
+  }
+  setCartItems([...cartItems])
 }
 
 const addToFavoruite = (phone: Phone) => {
@@ -58,7 +64,7 @@ const addToFavoruite = (phone: Phone) => {
 
 
 const removeFromFavoruite = (phone: Phone) => {
-  const filteredFavoruites = favoruites?.filter(fav => fav.id !== phone.id);
+  const filteredFavoruites = favoruites.filter(fav => fav.id !== phone.id);
   setFavoruites(filteredFavoruites);
 }
 
@@ -67,10 +73,10 @@ const removeFromCart = (phone: Phone) => {
   setCartItems(filteredCart);
 }
 
-const contextValue = useMemo(()=> (
-  { favoruites, cartItems, addToFavoruite, removeFromFavoruite, removeFromCart, addToCart }
+const contextValue = useMemo(() => (
+  { favoruites, cartItems, addToFavoruite, removeFromFavoruite, removeFromCart, addToCart, removeOneCart }
+), [cartItems, favoruites]);
 // eslint-disable-next-line react-hooks/exhaustive-deps
-),[favoruites, cartItems])
 
 
 return (
