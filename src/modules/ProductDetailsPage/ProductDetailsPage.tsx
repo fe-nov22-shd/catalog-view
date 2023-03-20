@@ -8,6 +8,7 @@ import { getProductId } from '../../utils/getProductId';
 
 export const ProductDetailsPage = () => {
   const [productInfo, setProductInfo] = useState<ProductInfoType | null>(null);
+
   const location = useLocation();
   const productId = getProductId(location.pathname);
 
@@ -21,6 +22,9 @@ export const ProductDetailsPage = () => {
     getProductInfoFromServer();
   }, []);
 
+  useEffect(() => {
+    getProductInfoFromServer();
+  }, [productId]);
 
   return (
     <>
