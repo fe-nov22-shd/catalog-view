@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/catalog-view/static/css/main.f65850d6.css",
-    "main.js": "/catalog-view/static/js/main.0022a964.js",
+    "main.css": "/catalog-view/static/css/main.46144314.css",
+    "main.js": "/catalog-view/static/js/main.ac8a6107.js",
     "static/media/banner-desktop.jpeg": "/catalog-view/static/media/banner-desktop.5ee429b1dda9e78a56f6.jpeg",
     "static/media/banner.jpeg": "/catalog-view/static/media/banner.330ccefb220f2ef63b51.jpeg",
     "static/media/logo.svg": "/catalog-view/static/media/logo.0909646ca933dccfb4150fb11fa0a24f.svg",
@@ -25,14 +25,13 @@
     "static/media/banner-next.svg": "/catalog-view/static/media/banner-next.d8be0d9488d520e08fa6.svg",
     "static/media/Vector.svg": "/catalog-view/static/media/Vector.80e27a8f296e8f6d01b0495743a40009.svg",
     "static/media/Arrow_back.svg": "/catalog-view/static/media/Arrow_back.e7e86408bcedf03dc9d5.svg",
-    "static/media/arrow-down-icon.svg": "/catalog-view/static/media/arrow-down-icon.98c9dd6d98b47f2f1977e301cf0fa429.svg",
     "static/media/banner-prev.svg": "/catalog-view/static/media/banner-prev.52b1de8135fb515af2ee.svg",
     "index.html": "/catalog-view/index.html",
-    "main.f65850d6.css.map": "/catalog-view/static/css/main.f65850d6.css.map",
-    "main.0022a964.js.map": "/catalog-view/static/js/main.0022a964.js.map"
+    "main.46144314.css.map": "/catalog-view/static/css/main.46144314.css.map",
+    "main.ac8a6107.js.map": "/catalog-view/static/js/main.ac8a6107.js.map"
   },
   "entrypoints": [
-    "static/css/main.f65850d6.css",
-    "static/js/main.0022a964.js"
+    "static/css/main.46144314.css",
+    "static/js/main.ac8a6107.js"
   ]
 }
