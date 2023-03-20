@@ -6,15 +6,15 @@ import { Phone } from "../../types/Phone";
 import './CartItem.scss'
 
 type Props = {
-  good: Phone,
+  good: Phone;
 }
-export const CartItem:React.FC<Props> = ({ good }) => {
+export const CartItems:React.FC<Props> = ({ good }) => {
+
   const { name,
     price,
     image,
   } = good;
-
-  const { removeFromCart } = useContext(LocaleStorageContext);
+  const { addToCart, removeFromCart } = useContext(LocaleStorageContext);
   const handleClick = () => {
     removeFromCart(good);
   }
@@ -26,7 +26,8 @@ export const CartItem:React.FC<Props> = ({ good }) => {
           <button
             type="button"
             className="cart-page__btn-closer"
-            onClick={ handleClick }>
+            onClick={ handleClick }
+          >
               ×
           </button>
         </div>
@@ -42,7 +43,10 @@ export const CartItem:React.FC<Props> = ({ good }) => {
       </div>
       <div className='cart-page__right-part-wrapper'>
         <div className="cart-page__card-counter">
-          <button className="cart-page__btn-card-counter">-</button>
+          <button
+            className="cart-page__btn-card-counter"
+            onClick={() => addToCart(good)}
+          >-</button>
           <p className="cart-page__card-count">1</p>
           <button className="cart-page__btn-card-counter">+</button>
         </div>

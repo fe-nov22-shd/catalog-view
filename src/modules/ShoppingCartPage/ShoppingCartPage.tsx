@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import './ShoppingCartPage.scss'
-import { CartItem } from '../../components/CartItem';
+import { CartItems } from '../../components/CartItem';
 import Grid from '@mui/material/Grid';
 import { LocaleStorageContext } from "../../components/Context";
 
@@ -23,8 +23,9 @@ export const ShoppingCartPage: React.FC = () => {
   //   return;
   // }
   const { cartItems } = useContext(LocaleStorageContext);
+  console.log(cartItems)
   const countItems = cartItems.length;
-  const totalCost: number = cartItems.reduce((a, b) => a + b.price, 0);
+  // const totalCost: number = cartItems.reduce((a, b) => a + b.price, 0);
 
   return (
       <div className="cart-page">
@@ -42,8 +43,8 @@ export const ShoppingCartPage: React.FC = () => {
             {countItems
             ? (
                 <div className="cart-page__card-container">
-                    {cartItems.map(good => (
-                      <CartItem key={good.id} good={good} />
+                    {cartItems.map(({good}) => (
+                      <CartItems key={good.id} good={good} />
                     ))}
                 </div>
             ) : (
@@ -53,7 +54,7 @@ export const ShoppingCartPage: React.FC = () => {
             </Grid>
             <Grid item tablet={12} desktop={4} mobile={12}>
               <div className="cart-page__checkout_block">
-                <p className="cart-page__total-price">{totalCost}</p>
+                {/* <p className="cart-page__total-price">{totalCost}</p> */}
                 {countItems > 1 && (
                   <p className="cart-page__total-count">{`Total for ${countItems} items`}</p>
                 )}
