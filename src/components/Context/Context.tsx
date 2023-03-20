@@ -1,15 +1,15 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { createContext, useMemo } from "react";
 import { useLocalStorage } from '../../utils/useLocalStorage';
 import { Phone }  from '../../types/Phone';
 
 type ContextType = {
-  favoruites: Phone[] | undefined,
+  favorites: Phone[] | undefined,
   cartItems: Phone[] | undefined,
-  addToFavoruite: (phone: Phone | undefined) => void,
+  addToFavorites: (phone: Phone | undefined) => void,
   addToCart: (phone: Phone | undefined) => void,
-  removeFromFavoruite: (phone: Phone | undefined) => void;
+  removeFromFavorites: (phone: Phone | undefined) => void;
   removeFromCart: (phone: Phone | undefined) => void;
-
 }
 
 
@@ -20,14 +20,14 @@ interface Props {
 }
 
 export const LocaleStorageProvider: React.FC<Props> = ({ children }) => {
-const [favoruites, setFavoruites] = useLocalStorage<Phone[]>('favoruite', []);
+const [favorites, setFavorites] = useLocalStorage<Phone[]>('favorites', []);
 const [cartItems, setcartItems] = useLocalStorage<Phone[]>('cart', []);
 
 
-const addToFavoruite = (phone: Phone) => {
-  setFavoruites(prevState => {
-
-    return [...prevState];
+const addToFavorites = (phone: Phone) => {
+  setFavorites(prevState => {
+    prevState.push(phone)
+    return prevState;
   }
 )
 }
@@ -40,9 +40,9 @@ const addToCart = (phone: Phone) => {
 )
 }
 
-const removeFromFavoruite = (phone: Phone) => {
-  const filteredFavoruites = favoruites?.filter(fav => fav.id !== phone.id);
-  setFavoruites(filteredFavoruites);
+const removeFromFavorites = (phone: Phone) => {
+  const filteredFavoruites = favorites?.filter(fav => fav.id !== phone.id);
+  setFavorites(filteredFavoruites);
 }
 
 const removeFromCart = (phone: Phone) => {
@@ -50,15 +50,17 @@ const removeFromCart = (phone: Phone) => {
   setcartItems(filteredCart);
 }
 
+
 const contextValue = useMemo(()=> (
-  { favoruites, cartItems, addToFavoruite, removeFromFavoruite, removeFromCart, addToCart }
-// eslint-disable-next-line react-hooks/exhaustive-deps
-),[favoruites, cartItems])
+  { favorites, cartItems, addToFavorites, removeFromFavorites, removeFromCart, addToCart}
+),[favorites, cartItems]);
+
+
 
 
 return (
   <LocaleStorageContext.Provider value={contextValue}>
     {children}
   </LocaleStorageContext.Provider>
-)
-}
+  );
+};
