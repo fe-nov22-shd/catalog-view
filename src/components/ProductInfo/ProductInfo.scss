@@ -1,0 +1,65 @@
+@import '../../generalStyles/colors';
+
+.product-info {
+  &__container {
+
+  }
+
+  &__header {
+    margin-bottom: 40px;
+
+    font-family: 'Mont', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 41px;
+    letter-spacing: -0.01em;
+  }
+
+  &__images-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__images-list {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  &__image-link {
+    padding: 7px;
+    margin-bottom: 16px;
+
+    width: 80px;
+    height: 80px;
+
+    text-align: center;
+
+    border: 1px solid $color__header-link;
+
+    &--active {
+      border: 1px solid $color__header-active-link;
+    }
+  }
+
+  &__image-list-item {
+    width: auto;
+    height: 100%;
+  }
+
+  &__image-preview {
+    padding: 11px;
+
+    display: flex;
+    justify-content: center;
+
+    width: 464px;
+    height: 464px;
+
+    &-item {
+      width: auto;
+      height: 100%;
+    }
+  }
+}
