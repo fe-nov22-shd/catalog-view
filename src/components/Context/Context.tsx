@@ -15,6 +15,7 @@ type ContextType = {
   removeFromFavoruite: (phone: Phone) => void;
   removeFromCart: (phone: Phone) => void;
   removeOneCart: (phone: Phone) => void;
+
 }
 
 
@@ -62,7 +63,6 @@ const addToFavoruite = (phone: Phone) => {
   });
   }
 
-
 const removeFromFavoruite = (phone: Phone) => {
   const filteredFavoruites = favoruites.filter(fav => fav.id !== phone.id);
   setFavoruites(filteredFavoruites);
@@ -77,7 +77,6 @@ const contextValue = useMemo(() => (
   { favoruites, cartItems, addToFavoruite, removeFromFavoruite, removeFromCart, addToCart, removeOneCart }
 ), [cartItems, favoruites]);
 // eslint-disable-next-line react-hooks/exhaustive-deps
-
 
 return (
   <LocaleStorageContext.Provider value={contextValue}>

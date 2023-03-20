@@ -1,9 +1,9 @@
 import React from "react";
 import { useContext } from 'react';
-import { LocaleStorageContext } from "../../components/Context";
+import { LocaleStorageContext } from "../Context";
 import { Phone } from "../../types/Phone";
 
-import './CartItem.scss'
+import './CartItems.scss'
 
 type Props = {
   good: Phone;
@@ -17,6 +17,7 @@ export const CartItems:React.FC<Props> = ({ good, count }) => {
   const isDisabledToRemove = count <= 1;
   const isDisabledToAdd = count >= 100;
   const { addToCart, removeFromCart, removeOneCart } = useContext(LocaleStorageContext);
+
   const handleClick = () => {
     removeFromCart(good);
   }
@@ -30,6 +31,7 @@ export const CartItems:React.FC<Props> = ({ good, count }) => {
             className="cart-page__btn-closer"
             onClick={ handleClick }
           >
+
               ×
           </button>
         </div>

@@ -4,11 +4,13 @@ import { Stack } from "@mui/system"
 
 type Props = {
   numberOfPages: number,
-  getCurrentPage: (a:string) => void
+  getCurrentPage: (a:string) => void,
+  currentPage:string
 }
-export const PaginationBlock:React.FC<Props> = ({ 
+export const PaginationBlock:React.FC<Props> = ({
   numberOfPages,
-  getCurrentPage, 
+  getCurrentPage,
+  currentPage
 }) => {
 
   const handleCurrentPage = (event: React.ChangeEvent<unknown>, value: number) => {
@@ -19,7 +21,14 @@ export const PaginationBlock:React.FC<Props> = ({
       <div className='pagination-container'>
         {!!numberOfPages && (
           <Stack spacing={2}>
-            <Pagination count={numberOfPages} shape="rounded" onChange={handleCurrentPage}/>
+            <Pagination
+              sx={{borderRadius: '0'}}
+              defaultPage={1}
+              page={+currentPage}
+              count={numberOfPages}
+              shape="rounded"
+              variant='outlined'
+              onChange={handleCurrentPage}/>
           </Stack>
         )}
 

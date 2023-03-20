@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import './ShoppingCartPage.scss'
-import { CartItems } from '../../components/CartItem';
 import Grid from '@mui/material/Grid';
+import { CartItems } from '../../components/CartItems/CartItems';
 import { LocaleStorageContext } from "../../components/Context";
 import { Link } from 'react-router-dom';
 

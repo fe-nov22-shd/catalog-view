@@ -19,18 +19,58 @@ declare module '@mui/system' {
 type Props = {
   children: React.ReactNode
 }
-export const GitProvider:React.FC<Props> = ({ children }) => (
-  <ThemeProvider
-    theme={createTheme({
-      breakpoints: {
-        values: {
-          mobile: 0,
-          tablet: 640,
-          tabletXL: 768,
-          desktop: 1200,
+
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      mobile: 0,
+      tablet: 640,
+      tabletXL: 768,
+      desktop: 1200,
+    },
+  },
+  palette: {
+    primary: {
+      main: '#313237'
+    },
+    secondary: {
+      main: '#89939a'
+    }
+  },
+  typography: {
+    fontFamily: 'Mont'
+  },
+  shape: {
+    borderRadius: 0
+  },
+  components: {
+    // Name of the component
+    MuiButtonBase: {
+      styleOverrides: {
+        // Name of the slot
+        root: {
+          // Some CSS
+          backgroundColor: '#fff',
+          borderRadius: '0'
         },
       },
-    })}
+    },
+    // MuiPaginationItem: {
+    //   styleOverrides: {
+    //     // Name of the slot
+    //     root: {
+    //       // Some CSS
+    //       backgroundColor: '#fff',
+    //       borderRadius: '0'
+    //     },
+    //   },
+    // },
+  },
+});
+
+export const GitProvider:React.FC<Props> = ({ children }) => (
+  <ThemeProvider
+    theme={theme}
   >
   { children }
   </ThemeProvider>
