@@ -35,7 +35,6 @@ const removeFromFavoruite = (phone: Phone) => {
   setFavoruites(filteredFavoruites);
 }
 
-
 const addToCart = (phone: Phone) => {
   setCartItem(prevState => {
     prevState.push(phone)

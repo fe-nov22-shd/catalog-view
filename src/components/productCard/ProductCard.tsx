@@ -3,7 +3,7 @@ import './ProductCard.scss';
 import {ReactComponent as HeartRed} from '../../img/heart-red.svg';
 import {ReactComponent as Heart} from '../../img/heart.svg';
 import { Phone } from '../../types/Phone';
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import { LocaleStorageContext } from '../Context';
 
 type Props = {
@@ -11,16 +11,17 @@ type Props = {
 }
 
 export const ProductCard: React.FC<Props> = ({ phone }) => {
-  const [isAddedToCart, setAddedToCart] = useState(false);
+  const [isCartClicked, setIsCartClicked] = useState(false);
   const [isFavoriteClicked, setIsFavoriteClicked] = useState(false);
 
   const {
     favoruites,
-    addToCart,
     addToFavoruite,
     removeFromFavoruite,
+    cartItem,
+    removeFromCart,
+    addToCart,
   } = useContext(LocaleStorageContext)
-
 
   const {
     id,
@@ -33,14 +34,16 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
     ram,
   } = phone;
 
+  const isItemInCart = Boolean(cartItem.find(item => item.id === id))
 
   const handleCartButton = (phone: Phone) => {
-    setAddedToCart(current => !current);
-    addToCart(phone);
-  };
+    setIsFavoriteClicked(true);
+    isItemInCart
+      ? removeFromCart(phone)
+      : addToCart(phone)
+    };
 
   const isItemInFavorites = Boolean(favoruites.find(item => item.id === id))
-
 
   const handleFavoriteButton =  () => {
     setIsFavoriteClicked(true);
@@ -49,7 +52,10 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
       : addToFavoruite(phone)
     };
 
-  useEffect (()=> { setIsFavoriteClicked(false)}, [isFavoriteClicked])
+  useEffect (()=> {
+    setIsFavoriteClicked(false)
+    setIsCartClicked(false)
+  }, [isFavoriteClicked, isCartClicked])
 
   return (
     <div className="product-card container__width">
@@ -104,7 +110,7 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
       </div>
 
       <div className="product-card__button-container">
-        {isAddedToCart
+        {isItemInCart
           ? (
             <button
               type="button"
@@ -127,7 +133,6 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
             </button>
           )
         }
-
         <button
           type="button"
           onClick={handleFavoriteButton}
