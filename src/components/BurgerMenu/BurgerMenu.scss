@@ -8,6 +8,7 @@
   left: 0;
   bottom: 0;
   width: 100vw;
+  overflow-y: auto;
 
   display: flex;
   flex-direction: column;
@@ -20,14 +21,14 @@
 
   border-top: 1px solid $color-elements;
 
-  transform: translateX(-100%);
+  transform: translateY(-100%);
   transition: transform 0.2s ease-in-out;
   transition-delay: 0.3s;
 
   z-index: 2;
 
   &--active {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 
   @include onTablet {
@@ -40,20 +41,23 @@
     width: 100%;
 
     border-top: 1px solid $color-elements;
+
+    & .header__icons {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: $header-height-desktop;
+    }
+    & .header__icon {
+      width: 50%;
+    }
   }
-}
 
-.burger-menu--active .header-icons {
-  background-color: $color-white;
-  display: block;
-  width: 50%;
-  padding: 0;
-}
-
-.burger-menu__icons .nav__link {
-  padding: 0;
-}
-
-.burger-menu .nav__item {
-  margin-bottom: 32px;
+  & .nav__item {
+    margin-bottom: 16px;
+    cursor: pointer;
+  }
+  & .nav__item:last-child{
+    margin-bottom: 0;
+  }
 }

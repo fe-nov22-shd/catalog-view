@@ -38,16 +38,16 @@ export const Header: React.FC = () => {
           </div>
         </div>
 
-        <div className="header__menu-btn">
+        <div className="header__menu-btn" onClick={toggleMenu}>
           {isMenuOpened ? (
-            <img src={close} alt="close" onClick={toggleMenu} />
+            <img src={close} alt="close" />
           ) : (
-            <img src={burger} alt="burger" onClick={toggleMenu} />
+            <img src={burger} alt="burger"/>
           )}
         </div>
 
         <div className="header__icons">
-          <HeaderIcons />
+          <HeaderIcons closeMenu={closeMenu} />
         </div>
       </header>
 

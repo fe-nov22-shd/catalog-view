@@ -29,19 +29,6 @@ export const HomePage = () => {
       <Grid item tablet={12} tabletXL={12} desktop={12} mobile={12}>
         <HotPrices />
       </Grid>
-
-      {/* <Grid item tablet={6} tabletXL={4} desktop={3} mobile={12}>
-        <p className="test">Item</p>
-      </Grid>
-      <Grid item tablet={6} tabletXL={4} desktop={3} mobile={12}>
-        <p className="test">Item</p>
-      </Grid>
-      <Grid item tablet={6} tabletXL={4} desktop={3} mobile={12}>
-        <p className="test">Item</p>
-      </Grid>
-      <Grid item tablet={6} tabletXL={4} desktop={3} mobile={12}>
-        <p className="test">Item</p>
-      </Grid> */}
     </Grid>
   );
 

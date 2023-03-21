@@ -18,7 +18,7 @@ export const BurgerMenu: React.FC<Props> = ({isMenuOpen, closeMenu}) => {
     <div className={cn("burger-menu", { "burger-menu--active": isMenuOpen })}>
       <Nav closeMenu={closeMenu} />
       <div className="burger-menu__icons">
-        <HeaderIcons />
+        <HeaderIcons closeMenu={closeMenu} />
       </div>
     </div>
   );
