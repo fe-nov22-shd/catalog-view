@@ -47,7 +47,7 @@ export const Header: React.FC = () => {
         </div>
 
         <div className="header__icons">
-          <HeaderIcons closeMenu={closeMenu} />
+          <HeaderIcons />
         </div>
       </header>
 

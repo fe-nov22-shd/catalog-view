@@ -1,4 +1,3 @@
-import React from 'react';
 import heart from '../../img/heart.svg';
 import cart from '../../img/cart.svg';
 import { NavLink } from 'react-router-dom';
