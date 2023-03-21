@@ -18,7 +18,7 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
     favoruites,
     addToFavoruite,
     removeFromFavoruite,
-    cartItem,
+    cartItems,
     removeFromCart,
     addToCart,
   } = useContext(LocaleStorageContext)
@@ -34,7 +34,7 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
     ram,
   } = phone;
 
-  const isItemInCart = Boolean(cartItem.find(item => item.id === id))
+  const isItemInCart = Boolean(cartItems.find(item => item.good.id === id))
 
   const handleCartButton = (phone: Phone) => {
     setIsFavoriteClicked(true);

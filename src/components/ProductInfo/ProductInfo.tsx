@@ -18,11 +18,11 @@ export const ProductInfo: FC<Props> = ({ productInfo }) => {
   const [selectedImage, setSelectedImage] = useState(productInfo.images[0]);
   const {
     favoruites,
-    cartItems,
+    cartItems
   } = useContext(LocaleStorageContext);
 
   const isAddedToCart = cartItems.filter(product => product.good.itemId === productInfo.id).length;
-  const isAddedToFavorite = favoruites.filter(product => product.good.itemId === productInfo.id).length;
+  const isAddedToFavorite = favoruites.filter(product => product.itemId === productInfo.id).length;
 
   useEffect(() => {
     setSelectedImage(productInfo.images[0]);

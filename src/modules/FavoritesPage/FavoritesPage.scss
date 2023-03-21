@@ -1,23 +1,39 @@
+@import '../../generalStyles/colors';
+
+
 .favoruite__title {
   font-family: 'Mont';
-font-style: normal;
-font-weight: 800;
-font-size: 48px;
-line-height: 56px;
-letter-spacing: -0.01em;
-color: #313237;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -0.01em;
+  color: $color__header-active-link;
 
 }
 
 .favoruite__count {
   font-family: 'Mont';
-font-style: normal;
-font-weight: 600;
-font-size: 14px;
-line-height: 21px;
-color: #89939A;
-margin-bottom: 40px;
-margin-top: 8px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: $color__header-link;
+  margin-bottom: 40px;
+  margin-top: 8px;
+}
+
+.favoruite__title-noitem {
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 56px;
+  letter-spacing: -0.01em;
+  color: $color__header-link;
+  text-align: center;
+  margin-top: 200px;
+  justify-content: center;
 }
 
 @media screen and (max-width: 1280px) {
