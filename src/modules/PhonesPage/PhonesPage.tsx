@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import './PhonesPage.scss'
 import { Breadcrumbs } from "../Breadcrumbs/Breadcrumbs";
 import { Catalog } from '../../components/Catalog';
@@ -48,7 +49,7 @@ export const PhonesPage = () => {
           page: page,
           perPage: count,
         }
-    ))}, []);
+    ))}, [searchParams]);
 
   const location = useLocation();
   const searchQuery = location.search;
