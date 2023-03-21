@@ -28,7 +28,7 @@ export const PhonesPage = () => {
   const getPhonesFromServer = async (searchParam) => {
     setIsLoading(true);
     try {
-      const { amount, phones} = await getPhonesData(searchParam);
+      const { amount, phones } = await getPhonesData(searchParam);
       setPhones(phones);
       setPhonesAmount(amount);
     } catch {
@@ -47,7 +47,7 @@ export const PhonesPage = () => {
         searchParams,
         { sort: sortType || null,
           page: page,
-          perPage: count,
+          perPage: count || null,
         }
     ))}, [searchParams]);
 
