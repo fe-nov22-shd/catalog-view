@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/catalog-view/static/css/main.155b13a7.css",
-    "main.js": "/catalog-view/static/js/main.c8f405a5.js",
+    "main.css": "/catalog-view/static/css/main.a5a58628.css",
+    "main.js": "/catalog-view/static/js/main.70857b1b.js",
     "static/media/banner-desktop.jpeg": "/catalog-view/static/media/banner-desktop.5ee429b1dda9e78a56f6.jpeg",
     "static/media/banner.jpeg": "/catalog-view/static/media/banner.330ccefb220f2ef63b51.jpeg",
     "static/media/logo.svg": "/catalog-view/static/media/logo.0909646ca933dccfb4150fb11fa0a24f.svg",
@@ -9,6 +9,9 @@
     "static/media/Mont-Regular.otf": "/catalog-view/static/media/Mont-Regular.1d26d89f7339866d3133.otf",
     "static/media/Mont-SemiBold.otf": "/catalog-view/static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
     "static/media/Mont-Bold.otf": "/catalog-view/static/media/Mont-Bold.03c8c2f6127c1da0fc39.otf",
+    "static/media/category-phones.jpg": "/catalog-view/static/media/category-phones.5745f0cd09b6406ae00c.jpg",
+    "static/media/category-accessories.jpg": "/catalog-view/static/media/category-accessories.3b9d45fd64fcb701d380.jpg",
+    "static/media/category-tablets.jpg": "/catalog-view/static/media/category-tablets.05b3d251e09da4a22098.jpg",
     "static/media/banner-640-1199.png": "/catalog-view/static/media/banner-640-1199.6c10d00375dc24ea760f.png",
     "static/media/slick.svg": "/catalog-view/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/catalog-view/static/media/slick.a4e97f5a2a64f0ab1323.eot",
@@ -20,7 +23,9 @@
     "static/media/heart-red.svg": "/catalog-view/static/media/heart-red.67fee091940e1b385e9d011b6f38abc6.svg",
     "static/media/close.svg": "/catalog-view/static/media/close.3ea864f59fecb8596c4be9c8a455c02a.svg",
     "static/media/burger.svg": "/catalog-view/static/media/burger.7d886604721a2522b7ee9d3609bcd8e8.svg",
+    "static/media/arrow-left.svg": "/catalog-view/static/media/arrow-left.de060c26b4a1b352283a.svg",
     "static/media/VectorRight.svg": "/catalog-view/static/media/VectorRight.2a072ff1bf1fd396b30e9dec3a108dcb.svg",
+    "static/media/arrow-right.svg": "/catalog-view/static/media/arrow-right.a96d198de7ec6e137ad0.svg",
     "static/media/VectorLeft.svg": "/catalog-view/static/media/VectorLeft.f26374195e19e331e6ca021ec8218fbc.svg",
     "static/media/banner-next.svg": "/catalog-view/static/media/banner-next.d8be0d9488d520e08fa6.svg",
     "static/media/Vector.svg": "/catalog-view/static/media/Vector.80e27a8f296e8f6d01b0495743a40009.svg",
@@ -28,11 +33,11 @@
     "static/media/arrow-down-icon.svg": "/catalog-view/static/media/arrow-down-icon.98c9dd6d98b47f2f1977e301cf0fa429.svg",
     "static/media/banner-prev.svg": "/catalog-view/static/media/banner-prev.52b1de8135fb515af2ee.svg",
     "index.html": "/catalog-view/index.html",
-    "main.155b13a7.css.map": "/catalog-view/static/css/main.155b13a7.css.map",
-    "main.c8f405a5.js.map": "/catalog-view/static/js/main.c8f405a5.js.map"
+    "main.a5a58628.css.map": "/catalog-view/static/css/main.a5a58628.css.map",
+    "main.70857b1b.js.map": "/catalog-view/static/js/main.70857b1b.js.map"
   },
   "entrypoints": [
-    "static/css/main.155b13a7.css",
-    "static/js/main.c8f405a5.js"
+    "static/css/main.a5a58628.css",
+    "static/js/main.70857b1b.js"
   ]
 }
