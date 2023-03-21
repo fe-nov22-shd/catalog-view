@@ -19,14 +19,9 @@ export const SortingPanel:React.FC<Props> = ({
    sortingType,
   }) => {
 
-  const itemsCount = [ '4', '8', '16', 'all'];
-
-
-
   const handleItemsOnCount = (event: SelectChangeEvent) => {
     getNumberOfItems(event.target.value)
-  }
-
+  };
 
   const handleSorting = (event: SelectChangeEvent) => {
     getSortingType(event.target.value);
@@ -56,7 +51,7 @@ export const SortingPanel:React.FC<Props> = ({
                     Newest
                 </MenuItem>
                 <MenuItem value={Sort.Cheapest} >
-                    Best price
+                  From lower price
                 </MenuItem>
                 <MenuItem value={Sort.Alphabetically} >
                     Alphabetically
@@ -80,11 +75,18 @@ export const SortingPanel:React.FC<Props> = ({
               IconComponent={ArrowDown}
               className={"sorting-panel__select"}
             >
-              {itemsCount.map(item => (
-                <MenuItem value={item} >
-                  {item}
-                </MenuItem>
-              ))}
+              <MenuItem value={'4'} >
+                  4
+              </MenuItem>
+              <MenuItem value={'8'} >
+                  8
+              </MenuItem>
+              <MenuItem value={'16'} >
+                  16
+              </MenuItem>
+              <MenuItem value={''} >
+                  all
+              </MenuItem>
             </Select>
         </Grid>
 

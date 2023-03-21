@@ -1,9 +1,9 @@
-import {useContext} from 'react';
+import {useContext, useEffect} from 'react';
 import './ProductCard.scss';
 import {ReactComponent as HeartRed} from '../../img/heart-red.svg';
 import {ReactComponent as Heart} from '../../img/heart.svg';
 import { Phone } from '../../types/Phone';
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import { LocaleStorageContext } from '../Context';
 
 type Props = {
@@ -11,10 +11,20 @@ type Props = {
 }
 
 export const ProductCard: React.FC<Props> = ({ phone }) => {
-  const [isAddedToCart, setAddedToCart] = useState(false);
-  const [isAddedToFavorite, setAddedToFavorite] = useState(false);
-  const {addToCart, addToFavoruite} = useContext(LocaleStorageContext);
+  const [isCartClicked, setIsCartClicked] = useState(false);
+  const [isFavoriteClicked, setIsFavoriteClicked] = useState(false);
+
   const {
+    favoruites,
+    addToFavoruite,
+    removeFromFavoruite,
+    cartItems,
+    removeFromCart,
+    addToCart,
+  } = useContext(LocaleStorageContext)
+
+  const {
+    id,
     image,
     name,
     fullPrice,
@@ -24,15 +34,28 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
     ram,
   } = phone;
 
-  const handleCartButton = useCallback(() => {
-    setAddedToCart(current => !current);
-    addToCart(phone);
-  }, [])
+  const isItemInCart = Boolean(cartItems.find(item => item.good.id === id))
 
-  const handleFavoriteButton = useCallback(() => {
-    setAddedToFavorite(current => !current);
-    addToFavoruite(phone)
-  }, [])
+  const handleCartButton = (phone: Phone) => {
+    setIsFavoriteClicked(true);
+    isItemInCart
+      ? removeFromCart(phone)
+      : addToCart(phone)
+    };
+
+  const isItemInFavorites = Boolean(favoruites.find(item => item.id === id))
+
+  const handleFavoriteButton =  () => {
+    setIsFavoriteClicked(true);
+    isItemInFavorites
+      ? removeFromFavoruite(phone)
+      : addToFavoruite(phone)
+    };
+
+  useEffect (()=> {
+    setIsFavoriteClicked(false)
+    setIsCartClicked(false)
+  }, [isFavoriteClicked, isCartClicked])
 
   return (
     <div className="product-card container__width">
@@ -87,11 +110,11 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
       </div>
 
       <div className="product-card__button-container">
-        {isAddedToCart
+        {isItemInCart
           ? (
             <button
               type="button"
-              onClick={handleCartButton}
+              onClick={() => handleCartButton(phone)}
               className="
               product-card__button--added
               product-card__button
@@ -103,7 +126,7 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
           : (
             <button
               type="button"
-              onClick={handleCartButton}
+              onClick={() => handleCartButton(phone)}
               className="product-card__button"
             >
               Add to cart
@@ -115,7 +138,7 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
           onClick={handleFavoriteButton}
           className="product-card__button-favorite"
         >
-          {isAddedToFavorite
+          {isItemInFavorites
             ? <HeartRed />
             : <Heart />
           }

@@ -21,7 +21,7 @@ export const ProductInfo: FC<Props> = ({ productInfo }) => {
     cartItems
   } = useContext(LocaleStorageContext);
 
-  const isAddedToCart = cartItems.filter(product => product.itemId === productInfo.id).length;
+  const isAddedToCart = cartItems.filter(product => product.good.itemId === productInfo.id).length;
   const isAddedToFavorite = favoruites.filter(product => product.itemId === productInfo.id).length;
 
   useEffect(() => {
