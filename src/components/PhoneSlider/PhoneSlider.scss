@@ -10,7 +10,7 @@
   & .slick-arrow {
     position: absolute;
     top: -60px;
-    right: 0;
+    right: -22px;
     width: 32px;
     height: 32px;
     border: 1px solid #B4BDC4;
@@ -25,10 +25,12 @@
   & .slick-prev {
     background-image: url('../../img/arrow-left.svg');
     left: unset;
-    right: 48px;
+    right: 70px;
   }
 
   & .slick-next {
+    right: 22px;
+
     background-image: url('../../img/arrow-right.svg');
   }
 
@@ -47,8 +49,23 @@
     background-image: url('../../img/banner-next.svg');
   }
 
+  & .container__width {
+    margin: 0;
+  }
+
   & .product-card {
     transition: box-shadow 0.3s ease-in-out;
+    max-width: 212px;
+
+    @include onTablet {
+      max-width: 237px;
+    }
+
+    @include onDesktop {
+      max-width: 272px;
+
+      margin: 0;
+    }
 
     &:hover {
       box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.1);
