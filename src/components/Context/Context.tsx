@@ -18,7 +18,6 @@ type ContextType = {
 
 }
 
-
 export const LocaleStorageContext = createContext<ContextType>({} as ContextType)
 
 interface Props {

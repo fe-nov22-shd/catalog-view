@@ -10,8 +10,6 @@ import { Badge } from "@mui/material";
 export const HeaderIcons = () => {
   const { favoruites, cartItems } = useContext(LocaleStorageContext);
 
-
-
   return (
     <nav className="header__icons">
         <NavLink
