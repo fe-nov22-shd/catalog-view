@@ -40,7 +40,6 @@ export const LocaleStorageProvider: React.FC<Props> = ({ children }) => {
       setCartItems((prevState) => [...prevState, cartItem]);
       return;
     }
-
     cartItem.count++;
     setCartItems([...cartItems]);
   };

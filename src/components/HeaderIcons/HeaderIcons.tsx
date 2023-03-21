@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { NavLink } from "react-router-dom";
 import classnames from "classnames";
@@ -25,6 +26,7 @@ export const HeaderIcons: React.FC<Props> = ({closeMenu}) => {
         }
         to="favourites"
       >
+
         <Badge
           badgeContent={favoruites.length}
           color="primary"
