@@ -1,15 +1,17 @@
 import {  NavLink } from "react-router-dom";
 import classnames from 'classnames';
-
+import { useContext } from 'react';
+import { LocaleStorageContext } from "../../components/Context";
 import './HeaderIcons.scss';
 import heart from '../../img/heart.svg';
 import cart from '../../img/cart.svg';
 import { Badge } from "@mui/material";
 
 export const HeaderIcons = () => {
+  const { favoruites, cartItems } = useContext(LocaleStorageContext);
+
   return (
     <nav className="header__icons">
-
         <NavLink
           className={({ isActive }) =>
             classnames("header__icon", {
@@ -19,7 +21,7 @@ export const HeaderIcons = () => {
           to="favourites"
         >
         <Badge
-          badgeContent={0}
+          badgeContent={favoruites.length}
           color="primary"
           overlap="circular"
           sx={{
@@ -48,7 +50,7 @@ export const HeaderIcons = () => {
         to="cart"
       >
         <Badge
-          badgeContent={1}
+          badgeContent={cartItems.length}
           color="primary"
           overlap="circular"
           sx={{
