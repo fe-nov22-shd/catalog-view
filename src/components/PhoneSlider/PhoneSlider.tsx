@@ -51,14 +51,14 @@ export const PhoneSlider: React.FC<Props> = ({ children }) => {
       {
         breakpoint: 640,
         settings: {
-          slidesToShow: 2.5,
+          slidesToShow: 2.3,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 320,
         settings: {
-          slidesToShow: 1.2,
+          slidesToShow: 1.3,
           slidesToScroll: 1,
         },
       },

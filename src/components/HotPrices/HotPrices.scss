@@ -1,11 +1,11 @@
 @import '../../generalStyles/mixins.scss';
 
 .hot-prices {
-  padding: 0 16px;
+  padding-left: 16px;
   margin-bottom: 56px;
 
   @include onTablet {
-    padding: 0 24px;
+    padding-left: 24px;
     margin-bottom: 64px;
   }
 

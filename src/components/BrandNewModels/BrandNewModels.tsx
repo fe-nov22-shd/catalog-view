@@ -4,7 +4,6 @@ import { Phone } from '../../types/Phone';
 
 import { ProductCard } from '../productCard';
 import { PhoneSlider } from '../PhoneSlider';
-// import { useSearchParams } from 'react-router-dom';
 
 import './BrandNewModels.scss';
 
@@ -28,7 +27,9 @@ export const BrandNewModels: React.FC = () => {
 
   return (
     <section className="brand-new-models">
-      <h3 className='brand-new-models__title'>Brand new models</h3>
+      <h3 className='brand-new-models__title'>
+        Brand new models
+      </h3>
 
       <PhoneSlider>
         {phones.map((phone) => (
