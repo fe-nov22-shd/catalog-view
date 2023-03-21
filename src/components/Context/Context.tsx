@@ -37,10 +37,7 @@ const addToCart = (phone: Phone) => {
       count: 1,
     }
 
-    setCartItems(prevState => {
-      prevState.push(cartItem);
-      return prevState;
-    });
+    setCartItems(prevState => [...prevState, cartItem]);
     return;
   }
 
@@ -57,10 +54,7 @@ const removeOneCart = (phone: Phone) => {
 }
 
 const addToFavoruite = (phone: Phone) => {
-  setFavoruites(prevState => {
-    prevState.push(phone);
-    return prevState;
-  });
+  setFavoruites(prevState => [...prevState, phone]);
   }
 
 const removeFromFavoruite = (phone: Phone) => {
