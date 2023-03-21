@@ -27,7 +27,7 @@ export const Breadcrumbs = () => {
           return isLast ? (
             <li key={name} className="breadcrumb-item active" aria-current="page">
               <img src={vector} alt="vector-right" className="vector"  />
-              {name.slice(0, 1).toUpperCase() + name.slice(1)}
+              {(name.slice(0, 1).toUpperCase() + name.slice(1))}
             </li>
           ) : (
             <li key={name} className="breadcrumb-item">

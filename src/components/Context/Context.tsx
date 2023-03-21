@@ -1,4 +1,4 @@
-import React, { createContext, useMemo } from "react";
+import React, { createContext, useMemo,  useRef } from "react";
 import { useLocalStorage } from '../../utils/useLocalStorage';
 import { Phone }  from '../../types/Phone';
 
@@ -59,6 +59,7 @@ const removeOneCart = (phone: Phone) => {
 const addToFavoruite = (phone: Phone) => {
   setFavoruites(prevState => {
     prevState.push(phone);
+
     return prevState;
   });
   }
@@ -74,9 +75,9 @@ const removeFromCart = (phone: Phone) => {
 }
 
 const contextValue = useMemo(() => (
-  { favoruites, cartItems, addToFavoruite, removeFromFavoruite, removeFromCart, addToCart, removeOneCart }
+  { favoruites, cartItems, addToFavoruite, removeFromFavoruite, removeFromCart, addToCart, removeOneCart}
 // eslint-disable-next-line react-hooks/exhaustive-deps
-), [cartItems, favoruites]);
+), [cartItems, favoruites])
 
 return (
   <LocaleStorageContext.Provider value={contextValue}>
