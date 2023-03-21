@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { CatalogContent } from "../../components/CatalogContent";
 import { Breadcrumbs } from "../Breadcrumbs";
 import './FavoritesPage.scss'
+import { Link } from "react-router-dom";
 
 
 export const FavoritesPage = () => {
@@ -13,9 +14,16 @@ export const FavoritesPage = () => {
   return (
     <>
     <Breadcrumbs />
-    <h1 className="favoruite__title">Favoruite Page</h1>
+    <h1 className="favoruite__title">Favorites Page</h1>
     <p className="favoruite__count">{itemLength} items </p>
-    <CatalogContent phones={favoruites} />
+    {itemLength
+      ? <CatalogContent phones={favoruites} />
+      : <p className="favoruite__title-noitem" >
+          Nothing was selected for favorites
+         <br/>
+          Add something
+        </p>
+      }
   </>
   );
 };

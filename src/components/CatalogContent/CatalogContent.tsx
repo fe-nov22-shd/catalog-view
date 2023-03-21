@@ -20,7 +20,7 @@ export const CatalogContent:React.FC<Props> = ({ phones }) => {
         {phones.map(phone => {
           return (
             <Grid item tablet={6} tabletXL={4} desktop={6} mobile={12} key={phone.id}>
-              <ProductCard phone={phone}/>
+              <ProductCard phone={phone} key={phone.id}/>
             </Grid>
           )
         })}

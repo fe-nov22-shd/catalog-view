@@ -1,25 +1,70 @@
 import React from 'react';
 import heart from '../../img/heart.svg';
 import cart from '../../img/cart.svg';
-import { NavIcon } from '../NavIcon';
+import { NavLink } from 'react-router-dom';
+import { Badge } from "@mui/material";
+import classnames from 'classnames';
 
-type Props = {
-  closeMenu: () => void;
-};
-
-export const HeaderIcons: React.FC<Props> = ({ closeMenu }) => {
+export const HeaderIcons = () => {
   return (
-    <>
-      <NavIcon
-        to="favourites"
-        title={<img src={heart} alt="heart" />}
-        closeMenu={closeMenu}
-      />
-      <NavIcon
+    <nav className="header__icons">
+
+        <NavLink
+          className={({ isActive }) =>
+            classnames("header__icon", {
+              "header__icon--active": isActive,
+            })
+          }
+          to="favourites"
+        >
+        <Badge
+          badgeContent={0}
+          color="primary"
+          overlap="circular"
+          sx={{
+            "& .MuiBadge-badge": {
+              backgroundColor: '#EB5757',
+              border: `1px solid #fff`,
+              fontSize: 9,
+              height: 13,
+              width: 13,
+              minWidth: 0,
+              borderRadius: '7px',
+            },
+          }}
+        >
+          <img src={heart} alt="heart" className='header__icon-img'/>
+        </Badge>
+        </NavLink>
+
+
+      <NavLink
+        className={({ isActive }) =>
+          classnames("header__icon", {
+            "header__icon--active": isActive,
+          })
+        }
         to="cart"
-        closeMenu={closeMenu}
-        title={<img src={cart} alt="cart" />}
-      />
-    </>
+      >
+        <Badge
+          badgeContent={1}
+          color="primary"
+          overlap="circular"
+          sx={{
+            "& .MuiBadge-badge": {
+              backgroundColor: '#EB5757',
+              border: `1px solid #fff`,
+              fontSize: 9,
+              height: 13,
+              width: 13,
+              minWidth: 0,
+              borderRadius: '7px',
+            },
+          }}
+        >
+          <img src={cart} alt="heart" className='header__icon-img'/>
+        </Badge>
+      </NavLink>
+    </nav>
   );
 };

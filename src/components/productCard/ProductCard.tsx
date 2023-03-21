@@ -13,7 +13,7 @@ type Props = {
 export const ProductCard: React.FC<Props> = ({ phone }) => {
   const [isAddedToCart, setAddedToCart] = useState(false);
   const [isAddedToFavorite, setAddedToFavorite] = useState(false);
-  const {addToCart, addToFavoruite} = useContext(LocaleStorageContext)
+  const {addToCart, addToFavoruite} = useContext(LocaleStorageContext);
   const {
     image,
     name,
