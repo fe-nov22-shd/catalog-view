@@ -4,12 +4,11 @@ import { Phone }  from '../../types/Phone';
 
 type ContextType = {
   favoruites: Phone[] | undefined,
-  cartItems: Phone[] | undefined,
+  cartItem: Phone[] | undefined,
   addToFavoruite: (phone: Phone | undefined) => void,
   addToCart: (phone: Phone | undefined) => void,
   removeFromFavoruite: (phone: Phone | undefined) => void;
   removeFromCart: (phone: Phone | undefined) => void;
-
 }
 
 
@@ -21,23 +20,14 @@ interface Props {
 
 export const LocaleStorageProvider: React.FC<Props> = ({ children }) => {
 const [favoruites, setFavoruites] = useLocalStorage<Phone[]>('favoruite', []);
-const [cartItems, setcartItems] = useLocalStorage<Phone[]>('cart', []);
+const [cartItem, setCartItem] = useLocalStorage<Phone[]>('cart', []);
 
 
 const addToFavoruite = (phone: Phone) => {
   setFavoruites(prevState => {
-
-    return [...prevState];
-  }
-)
-}
-
-const addToCart = (phone: Phone) => {
-  setcartItems(prevState => {
     prevState.push(phone)
     return prevState;
-  }
-)
+  })
 }
 
 const removeFromFavoruite = (phone: Phone) => {
@@ -45,15 +35,31 @@ const removeFromFavoruite = (phone: Phone) => {
   setFavoruites(filteredFavoruites);
 }
 
+
+const addToCart = (phone: Phone) => {
+  setCartItem(prevState => {
+    prevState.push(phone)
+    return prevState;
+  }
+)
+}
+
 const removeFromCart = (phone: Phone) => {
-  const filteredCart = cartItems?.filter(fav => fav.id !== phone.id);
-  setcartItems(filteredCart);
+  const filteredCart = cartItem?.filter(fav => fav.id !== phone.id);
+  setCartItem(filteredCart);
 }
 
 const contextValue = useMemo(()=> (
-  { favoruites, cartItems, addToFavoruite, removeFromFavoruite, removeFromCart, addToCart }
+  {
+    favoruites,
+    cartItem,
+    addToFavoruite,
+    removeFromFavoruite,
+    removeFromCart,
+    addToCart,
+  }
 // eslint-disable-next-line react-hooks/exhaustive-deps
-),[favoruites, cartItems])
+),[favoruites, cartItem])
 
 
 return (
