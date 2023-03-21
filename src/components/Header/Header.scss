@@ -3,6 +3,7 @@
 @import '../../generalStyles/sizes.scss';
 
 .header .nav__list {
+
   @include onTablet {
     gap: 24px;
   }
@@ -14,6 +15,8 @@
 
 .header {
   font-family: 'Mont', sans-serif;
+  max-width: 1440px;
+  margin: 0 auto;
   position: sticky;
   top: 0;
   z-index: 3;
