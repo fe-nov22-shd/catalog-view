@@ -26,7 +26,7 @@ export const SortingPanel:React.FC<Props> = ({
   const handleSorting = (event: SelectChangeEvent) => {
     getSortingType(event.target.value);
   };
-  console.log(sortingType)
+  
   return (
     <div className="sorting-panel">
       <Grid
