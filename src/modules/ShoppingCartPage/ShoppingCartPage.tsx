@@ -9,6 +9,7 @@ export const ShoppingCartPage: React.FC = () => {
 
   const { cartItems } = useContext(LocaleStorageContext);
   const countItems = cartItems.reduce((a, {count}) => a + count, 0);
+  
   const totalCost: number = cartItems.reduce((a, {good, count}) => a + good.price * count, 0);
 
   return (
