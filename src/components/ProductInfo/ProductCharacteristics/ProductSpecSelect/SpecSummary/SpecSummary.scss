@@ -1,0 +1,37 @@
+.product-info {
+  &__details {
+    margin-bottom: 8px;
+
+    display: flex;
+    justify-content: space-between;
+
+    &-container {
+      margin-top: 25px;
+      max-width: 320px;
+
+      @media (max-width: 640px) {
+        max-width: 100%;
+      }
+    }
+
+    &-title {
+      font-family: 'Mont';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+
+      color: #89939A;
+    }
+
+    &-item {
+      font-family: 'Mont';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+
+      color: #313237;
+    }
+  }
+}

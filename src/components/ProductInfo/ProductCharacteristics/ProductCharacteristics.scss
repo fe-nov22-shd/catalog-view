@@ -1,0 +1,46 @@
+$primary-c:  #313237;
+$secondary-c: #89939a;
+$green-c: #27ae60;
+$red-c: #eb5757;
+$elements-c: #e2e6e9;
+
+
+.product-info {
+
+  &__price-container {
+    margin-top: 32px;
+    margin-bottom: 16px;
+
+    max-width: 320px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+
+  }
+
+
+  &__price {
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 41px;
+
+    color: #313237;
+
+    &--crossed {
+      font-family: 'Mont';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 28px;
+      text-decoration-line: line-through;
+
+      color: #89939A;
+    }
+  }
+}
+
+
