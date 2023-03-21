@@ -1,14 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState} from 'react';
 import Grid from "@mui/material/Grid";
 import './ShopByCategory.scss';
 import { CategoryCard } from '../CategoryCard';
+import { getPhonesData } from '../../api/getPhonesData';
 
 import categoryPhonesImg from "../../img/categories/category-phones.jpg";
 import categoryTabletsImg from "../../img/categories/category-tablets.jpg";
 import categoryAccessoriesImg from "../../img/categories/category-accessories.jpg";
 
 export const ShopByCategory: React.FC = () => {
-  const phonesAmount = 95;
+  const [amount, setAmount] = useState(0);
+
+  const getPhonesFromServer = async (searchParam) => {
+    try {
+      const { amount } = await getPhonesData(searchParam);
+      setAmount(amount);
+    } catch {
+      setAmount(0);
+    }
+  };
+
+    useEffect(() => {
+      getPhonesFromServer('');
+    }, []);
 
   return (
     <section className="categories">
@@ -20,7 +34,7 @@ export const ShopByCategory: React.FC = () => {
             link="/phones"
             image={categoryPhonesImg}
             title="Mobile phones"
-            amount={+phonesAmount}
+            amount={+amount}
           />
       </Grid>
 

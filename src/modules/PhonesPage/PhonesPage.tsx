@@ -29,7 +29,6 @@ export const PhonesPage = () => {
     setIsLoading(true);
     try {
       const { amount, phones } = await getPhonesData(searchParam);
-      console.log(searchParam, "searchParam", amount, phones);
       setPhones(phones);
       setPhonesAmount(amount);
     } catch {
