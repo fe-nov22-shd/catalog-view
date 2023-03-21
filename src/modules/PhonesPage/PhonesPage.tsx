@@ -48,7 +48,7 @@ export const PhonesPage = () => {
         searchParams,
         { sort: sortType || null,
           page: page,
-          perPage: count,
+          perPage: count || null,
         }
     ))}, [searchParams]);
 
