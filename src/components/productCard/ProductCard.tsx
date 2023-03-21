@@ -5,6 +5,7 @@ import {ReactComponent as Heart} from '../../img/heart.svg';
 import { Phone } from '../../types/Phone';
 import { useState } from 'react';
 import { LocaleStorageContext } from '../Context';
+import { Link } from 'react-router-dom';
 
 type Props = {
   phone: Phone,
@@ -25,6 +26,7 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
 
   const {
     id,
+    phoneId,
     image,
     name,
     fullPrice,
@@ -60,11 +62,15 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
   return (
     <div className="product-card container__width">
       <div className="product-card__image-container">
-        <img
-          src={image}
-          alt={name}
-          className="product-card__image"
-        />
+        <Link
+          to={`/phones/${phoneId}`}
+        >
+          <img
+            src={image}
+            alt={name}
+            className="product-card__image"
+          />
+        </Link>
       </div>
       <h1 className="product-card__title">
         {name}
