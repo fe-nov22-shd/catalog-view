@@ -1,17 +1,22 @@
 @import '../../generalStyles/colors';
 
 .product-info {
+  max-width: 1200px;
+  min-width: 320px;
+
   margin-bottom: 80px;
 
   padding: 0 16px;
 
-  @media (max-width: 1200px) {
-    padding: 0 25px;
-  }
-
-  @media (max-width: 640px) {
+  @media (min-width: 640px) {
     padding: 0 17px;
   }
+
+  @media (min-width: 1200px) {
+    padding: 0 32px;
+  }
+
+
 
   &__header {
     margin-bottom: 40px;

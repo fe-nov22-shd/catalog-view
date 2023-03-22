@@ -1,5 +1,4 @@
 import './ProductPictureSelect.scss';
-import {Grid} from '@mui/material';
 import cn from 'classnames';
 import React, {useEffect, useState} from 'react';
 

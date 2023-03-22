@@ -13,9 +13,13 @@ export const ProductInfo: React.FC<Props> = ({ productInfo }) => {
   return (
     <div className="product-info">
       <h1 className="product-info__header">{productInfo.name}</h1>
-      <Grid columnSpacing={10}  rowSpacing={10} container>
+      <Grid
+        container
+        rowSpacing={1}
+        columnSpacing={3}
+        columns={{tablet: 12, tabletXL: 12, desktop: 24, mobile: 4}}
+      >
         <ProductCharacteristics productInfo={productInfo} />
-
         <ProductDescription productInfo={productInfo} />
       </Grid>
     </div>

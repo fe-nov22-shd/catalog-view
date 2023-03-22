@@ -14,11 +14,11 @@ export const ProductDescription: React.FC<Props> = ({ productInfo }) => {
 
   return (
     <>
-      <Grid item tablet={12} tabletXL={12} desktop={6} mobile={12}>
+      <Grid item tablet={6} tabletXL={6} desktop={12} mobile={4}>
         <ProductAbout description={description}/>
       </Grid>
 
-      <Grid item tablet={12} tabletXL={12} desktop={6} mobile={12}>
+      <Grid item tablet={6} tabletXL={6} desktop={12} mobile={4}>
         <ProductSpec productInfo={productInfo} />
       </Grid>
     </>
