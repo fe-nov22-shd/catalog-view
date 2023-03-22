@@ -61,17 +61,16 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
 
   return (
     <div className="product-card container__width">
-      <div className="product-card__image-container">
-        <Link
-          to={`/phones/${phoneId}`}
-        >
-          <img
-            src={image}
-            alt={name}
-            className="product-card__image"
-          />
-        </Link>
-      </div>
+      <Link
+        to={`/phones/${phoneId}`}
+        className="product-card__image-container"
+      >
+        <img
+          src={image}
+          alt={name}
+          className="product-card__image"
+        />
+      </Link>
       <h1 className="product-card__title">
         {name}
       </h1>
