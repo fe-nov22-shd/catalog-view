@@ -14,21 +14,25 @@
 }
 
 .header {
-  font-family: 'Mont', sans-serif;
-  max-width: 1440px;
-  margin: 0 auto;
   position: sticky;
   top: 0;
   z-index: 3;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
   height: $header-height-mobile;
 
   background-color: $color-white;
   border-top: 1px solid $color-elements;
   border-bottom: 1px solid $color-elements;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    height: 100%;
+
+    max-width: 1440px;
+  }
 
   @include onDesktop {
     height: $header-height-desktop;
