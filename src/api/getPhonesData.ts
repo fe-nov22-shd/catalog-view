@@ -8,6 +8,7 @@ const tablet = '/tablets';
 type Props = {
   amount: number,
   phones: Phone[],
+  tablets: [],
 }
 export const getPhonesData = async (sortParam): Promise<Props> => {
   const response = await fetch(BASE_URL + phone + sortParam);
