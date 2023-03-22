@@ -57,7 +57,7 @@ export const ShoppingCartPage: React.FC = () => {
                   ))}
               </div>
           ) : (
-            <p>Cart is empty</p>
+            <p className="cart-page__no-items">Cart is empty</p>
           )
           }
           </Grid>
@@ -79,7 +79,7 @@ export const ShoppingCartPage: React.FC = () => {
                   className="close__button"
                   type='button'
                   onClick={handleClose}>
-                    X
+                    ×
                   </button>
                   {countItems > 0
                   ? (
@@ -106,8 +106,6 @@ export const ShoppingCartPage: React.FC = () => {
                   <Typography id="modal-modal-title" variant="h6" component="h2">
                     <div className="order__title-noitem">
                       <span>Oops, your cart is empty!
-                        <br/>
-                        Add something to cart
                       </span>
                       <img src={cart} alt='cart_item'>
                       </img>
