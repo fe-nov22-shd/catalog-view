@@ -10,6 +10,7 @@ type Props = {
   itemsOnPage:string,
   getSortingType: (a:string) => void,
   sortingType:string,
+  getCurrentPage:(a:string) => void,
 }
 
 export const SortingPanel:React.FC<Props> = ({
@@ -17,16 +18,18 @@ export const SortingPanel:React.FC<Props> = ({
    itemsOnPage,
    getSortingType,
    sortingType,
+   getCurrentPage,
   }) => {
 
   const handleItemsOnCount = (event: SelectChangeEvent) => {
-    getNumberOfItems(event.target.value)
+    getCurrentPage('1');
+    getNumberOfItems(event.target.value);
   };
 
   const handleSorting = (event: SelectChangeEvent) => {
     getSortingType(event.target.value);
   };
-  
+
   return (
     <div className="sorting-panel">
       <Grid

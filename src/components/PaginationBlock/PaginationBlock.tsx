@@ -12,7 +12,6 @@ export const PaginationBlock:React.FC<Props> = ({
   getCurrentPage,
   currentPage
 }) => {
-
   const handleCurrentPage = (event: React.ChangeEvent<unknown>, value: number) => {
     getCurrentPage(value.toString());
   };
