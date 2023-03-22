@@ -1,22 +1,19 @@
 @import '../../generalStyles/colors';
 
 .product-info {
-  max-width: 1200px;
+
   min-width: 320px;
-
   margin-bottom: 80px;
-
   padding: 0 16px;
 
   @media (min-width: 640px) {
-    padding: 0 17px;
+    padding: 0 24px;
   }
 
   @media (min-width: 1200px) {
+    max-width: 1200px;
     padding: 0 32px;
   }
-
-
 
   &__header {
     margin-bottom: 40px;
@@ -33,4 +30,17 @@
       font-size: 22px;
     }
   }
+
+  &__characteristics {
+    margin-bottom: 0;
+
+    @media (mix-width: 640px) {
+      margin-bottom: 64px;
+    }
+
+    @media (min-width: 1200px) {
+      margin-bottom: 80px;
+    }
+  }
+
 }
