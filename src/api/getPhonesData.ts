@@ -6,10 +6,11 @@ const phone = '/phones';
 const tablet = '/tablets';
 
 type Props = {
-  amount: number,
-  phones: Phone[],
-  tablets: [],
-}
+  amount: number;
+  phones: Phone[];
+  tablets: [];
+};
+
 export const getPhonesData = async (sortParam): Promise<Props> => {
   const response = await fetch(BASE_URL + phone + sortParam);
 
@@ -22,13 +23,17 @@ export const getTabletsData = async (sortParam): Promise<Props> => {
   return response.json();
 };
 
-export const getProductInfo = async (productId: string): Promise<ProductInfoType> => {
+export const getProductInfo = async (
+  productId: string
+): Promise<ProductInfoType> => {
   const response = await fetch(BASE_URL + '/info/' + productId);
 
   return response.json();
 };
 
-export const getProductByProductId = async (productId: string): Promise<Phone> => {
+export const getProductByProductId = async (
+  productId: string
+): Promise<Phone> => {
   const response = await fetch(BASE_URL + '/' + productId);
 
   return response.json();
@@ -42,6 +47,18 @@ export const getNewestPhones = async () => {
 
 export const getHotPricePhones = async () => {
   const response = await fetch(BASE_URL + '/hotprice');
+
+  return response.json();
+};
+
+export const getRelevant = async (productId: string) => {
+  const response = await fetch(BASE_URL + "/relevant/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ productId }),
+  });
 
   return response.json();
 };
