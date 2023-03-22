@@ -37,7 +37,7 @@ export const Catalog: React.FC<Props> = ({
   sortingType,
 }) => {
   const isPaginationShown = (itemsOnPage !== '');
-  
+
   return (
     <div className="Catalog">
       <h1 className="Catalog__title">Mobile phones</h1>
@@ -49,6 +49,7 @@ export const Catalog: React.FC<Props> = ({
         itemsOnPage={itemsOnPage}
         getSortingType={getSortingType}
         sortingType={sortingType}
+        getCurrentPage={getCurrentPage}
       />
 
       {isLoading

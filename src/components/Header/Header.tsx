@@ -29,25 +29,27 @@ export const Header: React.FC = () => {
   return (
     <>
       <header className="header page__header">
-        <div className="header__links">
-          <div className="header__logo">
-            <Logo />
+        <div className="header__container">
+          <div className="header__links">
+            <div className="header__logo">
+              <Logo />
+            </div>
+            <div className="header__nav">
+              <Nav closeMenu={closeMenu} />
+            </div>
           </div>
-          <div className="header__nav">
-            <Nav closeMenu={closeMenu} />
+
+          <div className="header__menu-btn" onClick={toggleMenu}>
+            {isMenuOpened ? (
+              <img src={close} alt="close" />
+            ) : (
+              <img src={burger} alt="burger" />
+            )}
           </div>
-        </div>
 
-        <div className="header__menu-btn" onClick={toggleMenu}>
-          {isMenuOpened ? (
-            <img src={close} alt="close" />
-          ) : (
-            <img src={burger} alt="burger"/>
-          )}
-        </div>
-
-        <div className="header__icons">
-          <HeaderIcons closeMenu={closeMenu} />
+          <div className="header__icons">
+            <HeaderIcons closeMenu={closeMenu} />
+          </div>
         </div>
       </header>
 
