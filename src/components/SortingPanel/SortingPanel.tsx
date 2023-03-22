@@ -4,6 +4,7 @@ import {ReactComponent as ArrowDown} from '../../img/arrow-down-icon.svg';
 import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { Sort } from '../../types/Sort';
+import { SearchingForm } from '../SearchingForm';
 
 type Props = {
   getNumberOfItems: (a:string) => void,
@@ -91,6 +92,15 @@ export const SortingPanel:React.FC<Props> = ({
                   all
               </MenuItem>
             </Select>
+        </Grid>
+        <Grid
+          item
+          tablet={12}
+          tabletXL={4}
+          desktop={17}
+          mobile={4}
+        >
+          <SearchingForm />
         </Grid>
 
       </Grid>

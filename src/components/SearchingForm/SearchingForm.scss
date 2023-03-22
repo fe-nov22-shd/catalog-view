@@ -1,0 +1,53 @@
+$primary-color: #313237;
+$secondary-color: #89939a;
+$icons-color: #b4bdc3;
+
+.input {
+  max-width: 100%;
+  width: 100%;
+  background-color: white;
+  border: 1px solid $icons-color;
+  outline: none;
+  font-family: 'Mont';
+  font-weight: 600;
+  font-size: 14px;
+  color: $primary-color;
+  padding: 9.5px;
+  margin-top: 15px;
+
+  &::placeholder {
+    color: $secondary-color;
+  }
+
+  &:hover {
+    border-color: $secondary-color;
+  }
+
+  &:focus {
+    border-color: $primary-color;
+  }
+
+   &__clear {
+    position: relative;
+    top: -28px;
+    right: 10px;
+    font-size: 20px;
+    line-height: 1;
+    font-family: "Mont",sans-serif;
+    font-weight: 600;
+    color: #cc9a9a;
+
+    float: right;
+    border: 0;
+    background: none;
+    cursor: pointer;
+
+    transform: translateY(-2px);
+    opacity: 1;
+    transition: color 0.2s ease-out;
+
+    &:hover {
+      color: #af5b5e;
+    }
+  }
+}
