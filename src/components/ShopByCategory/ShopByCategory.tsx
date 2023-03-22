@@ -43,7 +43,7 @@ export const ShopByCategory: React.FC = () => {
             link="/tablets"
             image={categoryTabletsImg}
             title="Tablets"
-            amount={24}
+            amount={0}
           />
         </Grid>
 
@@ -52,7 +52,7 @@ export const ShopByCategory: React.FC = () => {
             link="/accessories"
             image={categoryAccessoriesImg}
             title="Accessories"
-            amount={100}
+            amount={0}
           />
         </Grid>
       </Grid>

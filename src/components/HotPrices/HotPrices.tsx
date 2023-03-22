@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { getPhonesData } from '../../api/getPhonesData';
 import { Phone } from '../../types/Phone';
 
 import { ProductCard } from '../productCard';
 import { PhoneSlider } from '../PhoneSlider';
+import { getHotPricePhones } from '../../api/getPhonesData';
 
 import './HotPrices.scss';
 
@@ -11,14 +11,16 @@ export const HotPrices: React.FC = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
-  const dataIsLoaded = phones.length && !isLoading;
+  const isDataLoaded = phones.length > 0 && !isLoading;
 
-  const getCheapestPhones = async (searchParam) => {
+  const getPhonesFromServer = async () => {
     setIsLoading(true);
-
     try {
-      const { phones } = await getPhonesData(searchParam);
-      const sortedDesc = phones.slice(0, 16).sort((a, b) => b.price - a.price);
+      const response = await getHotPricePhones();
+      const sortedDesc = response
+        .map((res) => res.dataValues)
+        .sort((a, b) => b.price - a.price);
+
       setPhones(sortedDesc);
     } catch {
       setHasError(true);
@@ -28,14 +30,14 @@ export const HotPrices: React.FC = () => {
   };
 
   useEffect(() => {
-    getCheapestPhones("?sort=cheapest");
+    getPhonesFromServer();
   }, []);
 
   return (
     <section className="hot-prices">
       <h3 className="hot-prices__title">Hot prices</h3>
 
-      {dataIsLoaded && (
+      {isDataLoaded && (
         <PhoneSlider>
           {phones.map((phone) => (
             <ProductCard key={phone.id} phone={phone} />
@@ -44,7 +46,7 @@ export const HotPrices: React.FC = () => {
       )}
 
       {hasError && (
-        <p>
+        <p className='fetch-error-message'>
           "Oops! We're sorry, but it seems that the data failed to load. Please
           try again later or contact our support team for assistance. Thank you
           for your patience."
