@@ -17,3 +17,9 @@ export const getProductInfo = async (productId: string): Promise<ProductInfoType
 
   return response.json();
 };
+
+export const getProductByProductId = async (productId: string): Promise<Phone> => {
+  const response = await fetch(BASE_URL + '/' +productId);
+
+  return response.json();
+};

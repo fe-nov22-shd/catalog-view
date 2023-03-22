@@ -10,4 +10,5 @@ export const TelephoneColors = {
   red: '#C8102E',
   white: '#F2F0EB',
   coral: '#ED846D',
+  yellow: '#FFFF9F',
 };

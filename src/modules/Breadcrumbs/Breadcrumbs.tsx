@@ -1,8 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
-import "./Breadcrumbs.scss";
-import logo from '../../icons/Home.svg'
-import vector from '../../icons/VectorRight.svg'
-import vectorLeft from '../../icons/VectorLeft.svg'
+import './Breadcrumbs.scss';
+import logo from '../../icons/Home.svg';
+import vector from '../../icons/VectorRight.svg';
+import vectorLeft from '../../icons/VectorLeft.svg';
 
 
 export const Breadcrumbs = () => {
@@ -27,12 +27,16 @@ export const Breadcrumbs = () => {
           return isLast ? (
             <li key={name} className="breadcrumb-item active" aria-current="page">
               <img src={vector} alt="vector-right" className="vector"  />
-              {name.slice(0, 1).toUpperCase() + name.slice(1)}
+              {name.slice(0, 1).toUpperCase() + name.slice(1).replace(/-/g, ' ')}
             </li>
           ) : (
             <li key={name} className="breadcrumb-item">
               <Link to={routeTo} className="breadcrumb-link">
-              <img src={vector} alt="vector-right" className="vector" />
+                <img
+                  src={vector}
+                  alt="vector-right"
+                  className="vector"
+                />
                 {name.slice(0, 1).toUpperCase() + name.slice(1)}
               </Link>
             </li>
@@ -43,7 +47,7 @@ export const Breadcrumbs = () => {
         <img src={vectorLeft} alt="Vector Left" />
         Back
       </button>)
-}
+      }
     </nav>
   );
 };

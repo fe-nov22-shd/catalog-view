@@ -36,7 +36,8 @@ export const Catalog: React.FC<Props> = ({
   getSortingType,
   sortingType,
 }) => {
-
+  const isPaginationShown = (itemsOnPage !== '');
+  
   return (
     <div className="Catalog">
       <h1 className="Catalog__title">Mobile phones</h1>
@@ -55,11 +56,13 @@ export const Catalog: React.FC<Props> = ({
         : (
           <>
             <CatalogContent phones={phones}/>
-            <PaginationBlock
-              currentPage={currentPage}
-              numberOfPages={numberOfPages}
-              getCurrentPage={getCurrentPage}
-            />
+            {isPaginationShown &&
+              <PaginationBlock
+                currentPage={currentPage}
+                numberOfPages={numberOfPages}
+                getCurrentPage={getCurrentPage}
+              />
+            }
           </>
         )
       }

@@ -28,7 +28,7 @@ export const PhonesPage = () => {
   const getPhonesFromServer = async (searchParam) => {
     setIsLoading(true);
     try {
-      const { amount, phones} = await getPhonesData(searchParam);
+      const { amount, phones } = await getPhonesData(searchParam);
       setPhones(phones);
       setPhonesAmount(amount);
     } catch {
