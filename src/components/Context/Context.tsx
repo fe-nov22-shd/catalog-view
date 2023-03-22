@@ -15,6 +15,7 @@ type ContextType = {
   removeFromFavoruite: (phone: Phone) => void;
   removeFromCart: (phone: Phone) => void;
   removeOneCart: (phone: Phone) => void;
+  setCartItems: (cartItems: CartItem[]) => void;
 };
 
 export const LocaleStorageContext = createContext<ContextType>(
@@ -75,6 +76,7 @@ export const LocaleStorageProvider: React.FC<Props> = ({ children }) => {
       removeFromCart,
       addToCart,
       removeOneCart,
+      setCartItems,
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [cartItems, favoruites]

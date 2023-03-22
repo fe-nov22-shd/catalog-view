@@ -109,3 +109,43 @@ $secondary-font-color: #89939a;
     }
   }
 }
+
+.order__list {
+margin-left: 10px;
+margin-bottom: 16px;
+}
+
+.order__summary{
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid $secondary-font-color;
+  padding-top: 8px;
+}
+.order__list .cart-page__total-count {
+  margin-bottom: 8px;
+  line-height: 14px;
+}
+.order__title {
+  display: block;
+  font-weight: 800;
+  margin-bottom: 16px;
+  line-height: 22px;
+  font-size: 22px;
+  &-noitem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.close__button {
+  font-size: 20px;
+  position: fixed;
+  width:15px;
+  top: 15px;
+  right: 15px;
+  border: none;
+  outline: none;
+  background-color: white;
+  cursor: pointer;
+}
