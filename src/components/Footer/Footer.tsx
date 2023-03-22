@@ -18,7 +18,7 @@ export const  Footer = () => {
         </div>
         <nav className="footer__navigation navigation">
               <Link className='navigation__link' to="https://github.com/fe-nov22-shd/catalog-view" target="_blank">GitHub</Link>
-              <Link className='navigation__link' to="/contacts">Contacts</Link>
+              <Link className='navigation__link' to="/contact_us">Contacts</Link>
               <Link className='navigation__link' to="/rights">Rights</Link>
         </nav>
         <div className="footer__scroll scroll">
