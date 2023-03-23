@@ -7,6 +7,8 @@ import { Loader } from "../Loader";
 import { CatalogContent } from '../CatalogContent';
 import { Phone } from '../../types/Phone';
 import { PaginationBlock } from '../PaginationBlock';
+import { NoItemOnSearch } from '../NoItemOnSearch'
+import { Error } from '../ErrorOnServer';
 
 type Props = {
   title:string;
@@ -37,7 +39,12 @@ export const Catalog: React.FC<Props> = ({
   sortingType,
   title,
 }) => {
-  const isPaginationShown = (itemsOnPage !== '');
+
+  const isPaginationShowm = itemsOnPage !== '' && (
+    (products.length > +itemsOnPage) ||
+    (phonesAmount > +itemsOnPage)
+  );
+
   return (
     <div className="Catalog">
       <h1 className="Catalog__title">{title}</h1>
@@ -51,25 +58,28 @@ export const Catalog: React.FC<Props> = ({
         getCurrentPage={getCurrentPage}
       />
 
-      {isLoading
-        ? <Loader />
-        : ( products.length > 0
-            ? (
-              <>
-                <CatalogContent products={products} />
-                {isPaginationShown &&
-                  <PaginationBlock
-                    currentPage={currentPage}
-                    numberOfPages={numberOfPages}
-                    getCurrentPage={getCurrentPage}
-                  />
-                }
-              </>)
-            : (
-            <p className="Catalog__items-count">Items not found</p>
-            )
-          )
+      {isLoading && <Loader />}
+
+      {(isLoading && hasError) && (
+         <Error />
+      )}
+
+      {(!isLoading &&  products.length === 0) &&
+        <NoItemOnSearch />
       }
+
+      {(!isLoading &&  products.length > 0) && (
+        <>
+          <CatalogContent products={products} />
+          {isPaginationShowm &&
+            <PaginationBlock
+              currentPage={currentPage}
+              numberOfPages={numberOfPages}
+              getCurrentPage={getCurrentPage}
+            />
+          }
+        </>
+        )}
     </div>
   );
 }

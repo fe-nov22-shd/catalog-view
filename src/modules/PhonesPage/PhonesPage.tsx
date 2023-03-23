@@ -30,7 +30,6 @@ export const PhonesPage = () => {
     setIsLoading(true);
     try {
       const { amount, productsByCategory } = await getPhonesData(searchParam);
-      console.log(productsByCategory)
       setPhones(productsByCategory);
       setPhonesAmount(amount);
     } catch {
@@ -61,11 +60,13 @@ export const PhonesPage = () => {
   const searchQuery = location.search;
   const numberOfPages = getNumberOfPages(phonesAmount, itemsOnPage);
 
-
   useEffect(() => {
     applyPaginationQuery(sortingType, currentPage, itemsOnPage);
+  }, [itemsOnPage, sortingType, currentPage]);
+
+  useEffect(() => {
     getPhonesFromServer(searchQuery);
-  }, [itemsOnPage, sortingType, currentPage, searchQuery]);
+  }, [searchQuery]);
 
   return (
     <>
