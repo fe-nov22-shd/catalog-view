@@ -1,6 +1,6 @@
 export type Phone = {
   id: number,
-  category: "phones",
+  category: 1,
   phoneId: string,
   itemId: string,
   name: string,

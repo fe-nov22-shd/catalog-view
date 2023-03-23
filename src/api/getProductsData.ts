@@ -8,7 +8,7 @@ const tablet = '/tablets';
 type Props = {
   amount: number;
   phones: Phone[];
-  productsByCategory: [];
+  productsByCategory: Phone[];
 };
 
 export const getPhonesData = async (sortParam): Promise<Props> => {

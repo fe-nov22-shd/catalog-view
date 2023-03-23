@@ -4,7 +4,7 @@ import { Catalog } from '../../components/Catalog';
 import { Phone } from '../../types/Phone';
 import { useCallback, useEffect, useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
-import {getPhonesData, getTabletsData} from '../../api/getPhonesData';
+import { getTabletsData } from '../../api/getProductsData';
 import { NumberOfItems } from '../../types/NumberOfItemsOnPage';
 import { getSearchWith } from '../../utils/searchHelper';
 import { getNumberOfPages } from '../../utils/getNumberOfPages';
@@ -15,7 +15,7 @@ export const TabletsPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
 
-  const [phones, setPhones] = useState<Phone[]>([]);
+  const [tablets, setPhones] = useState<Phone[]>([]);
   const [phonesAmount, setPhonesAmount] = useState(0);
 
   const [sortingType, setSortingType] = useState<Sort|''>('');
@@ -48,7 +48,7 @@ export const TabletsPage = () => {
         page: page,
         perPage: count || null,
       }
-    ))}, [searchParams]);
+    ))}, [searchParams, setSearchParams]);
 
   const location = useLocation();
   const searchQuery = location.search;
@@ -70,7 +70,7 @@ export const TabletsPage = () => {
         title={CategotyTitle.Tablets}
         isLoading={isLoading}
         hasError={hasError}
-        phones={phones}
+        products={tablets}
         phonesAmount={phonesAmount}
         getNumberOfItems={getNumberOfItems}
         itemsOnPage={itemsOnPage}

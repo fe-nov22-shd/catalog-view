@@ -27,6 +27,7 @@ export const App = () => {
               <Route index element={<PhonesPage />} />
 
               <Route path=":productId" element={<ProductDetailsPage />} />
+
             </Route>
 
             <Route path="tablets">
@@ -34,7 +35,6 @@ export const App = () => {
 
               <Route path=":productId" element={<ProductDetailsPage />} />
             </Route>
-
 
             <Route path="accessories" element={<AccessoriesPage />} />
 

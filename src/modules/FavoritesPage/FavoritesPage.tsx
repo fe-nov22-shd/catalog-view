@@ -17,7 +17,7 @@ export const FavoritesPage = () => {
     <h1 className="favoruite__title">Favorites Page</h1>
     <p className="favoruite__count">{itemLength} items </p>
     {itemLength
-      ? <CatalogContent phones={favoruites} />
+      ? <CatalogContent products={favoruites} />
       : <p className="favoruite__title-noitem" >
           Nothing was selected for favorites
          <br/>
