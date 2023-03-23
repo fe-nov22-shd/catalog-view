@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
+import { NavItem } from '../NavItem';
 
 import './Banner.scss';
 
@@ -33,10 +34,21 @@ export const Banner: React.FC = () => {
   return (
     <div className="banner">
       <Slider {...settings}>
-        <div className='slick-slide slide-img1'></div>
-        <div className='slick-slide slide-img2'></div>
-        <div className='slick-slide slide-img3'></div>
-        <div className='slick-slide slide-img4'></div>
+        <div className="slick-slide slide-img1">
+          <NavItem to="/" title="" />
+        </div>
+
+        <div className="slick-slide slide-img2">
+          <NavItem to="phones" title="" />
+        </div>
+
+        <div className="slick-slide slide-img3">
+          <NavItem to="tablets" title="" />
+        </div>
+        
+        <div className="slick-slide slide-img4">
+          <NavItem to="accessories" title="" />
+        </div>
       </Slider>
     </div>
   );

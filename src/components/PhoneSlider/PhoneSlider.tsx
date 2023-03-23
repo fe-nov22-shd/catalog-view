@@ -84,6 +84,13 @@ export const PhoneSlider: React.FC<Props> = ({ children }) => {
           slidesToScroll: 1,
         },
       },
+      {
+        breakpoint: 340,
+        settings: {
+          slidesToShow: 1.3,
+          slidesToScroll: 1,
+        },
+      },
     ],
   };
 
