@@ -2,8 +2,8 @@ import React, { useEffect, useState} from 'react';
 import Grid from "@mui/material/Grid";
 import './ShopByCategory.scss';
 import { CategoryCard } from '../CategoryCard';
-import { getPhonesData } from '../../api/getPhonesData';
-import { getTabletsData } from '../../api/getPhonesData';
+import { getPhonesData } from '../../api/getProductsData';
+import { getTabletsData } from '../../api/getProductsData';
 
 import categoryPhonesImg from "../../img/categories/category-phones.jpg";
 import categoryTabletsImg from "../../img/categories/category-tablets.jpg";
