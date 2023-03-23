@@ -7,6 +7,8 @@ import Box from '@mui/material/Box/Box';
 import Modal from '@mui/material/Modal/Modal';
 import Typography from '@mui/material/Typography/Typography';
 import cart from '../../img/cart_icon.png';
+import { Breadcrumbs } from '../Breadcrumbs';
+import { Link } from 'react-router-dom';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -39,9 +41,9 @@ export const ShoppingCartPage: React.FC = () => {
   return (
     <div className="cart-page">
       <div className="cart-page__btn-back">
-        <a
-          href="*"
-          className="cart-page__btn-back-text">Back</a>
+        <Link
+          to="/"
+          className="cart-page__btn-back-text">Back</Link>
       </div>
       <h1 className="cart-page__title">
         Cart
