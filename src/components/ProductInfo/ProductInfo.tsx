@@ -28,8 +28,8 @@ export const ProductInfo: React.FC<Props> = ({ productInfo }) => {
           mobile: 4
         }}
       >
-        <ProductCharacteristics productInfo={productInfo} />
-        <ProductDescription productInfo={productInfo} />
+          <ProductCharacteristics productInfo={productInfo} />
+          <ProductDescription productInfo={productInfo} />
       </Grid>
     </div>
   );

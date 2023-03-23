@@ -10,7 +10,7 @@ type Props = {
 }
 export const ProductCharacteristics: React.FC<Props> = ({ productInfo }) => {
   return (
-    <div className="product-info__characteristic">
+    <>
       <Grid
         item
         tablet={6}
@@ -30,6 +30,6 @@ export const ProductCharacteristics: React.FC<Props> = ({ productInfo }) => {
       >
         <ProductSpecSelect productInfo={productInfo} />
       </Grid>
-    </div>
+    </>
   );
 };

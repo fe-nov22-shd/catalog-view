@@ -53,26 +53,27 @@
 
   &__image-preview {
     padding: 11px;
+    flex-grow: 1;
 
     display: flex;
     justify-content: center;
 
-    width: 464px;
-    height: 464px;
+    width: 288px;
+    height: 288px;
 
     &-item {
       width: auto;
       height: 100%;
     }
 
-    @media (max-width: 1200px) {
-      width: 288px;
-      height: 288px;
-    }
-
-    @media (max-width: 640px) {
+    @media (min-width: 640px) {
       margin-bottom: 16px;
 
+
+    @media (min-width: 1200px) {
+    width: 464px;
+    height: 464px;
+    }
       align-self: center;
     }
   }

@@ -1,5 +1,16 @@
 .specification {
   max-width: 100%;
+  margin-bottom: 56px;
+
+  @media (min-width: 640px) {
+    margin-bottom: 64px;
+  }
+
+  @media (min-width: 1200px) {
+    margin-bottom: 80px;
+  }
+
+
 
 
   &__header {
