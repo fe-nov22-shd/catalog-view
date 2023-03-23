@@ -104,7 +104,7 @@
     height: 100%;
     width: 48px;
     height: 100%;
-    box-shadow: -1px 0px 0px #E2E6E9;
+    box-shadow: -1px 0px 0px $color-elements;
 
     @include onDesktop {
       width: $header-height-desktop;

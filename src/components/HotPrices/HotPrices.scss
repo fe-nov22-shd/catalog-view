@@ -1,4 +1,5 @@
 @import '../../generalStyles/mixins.scss';
+@import '../../generalStyles/colors.scss';
 
 .hot-prices {
   padding-left: 16px;
@@ -10,12 +11,11 @@
   }
 
   &__title {
-    font-family: 'Mont', sans-serif;
     font-weight: 800;
     font-size: 22px;
     line-height: 1.4;
     letter-spacing: -0.01em;
-    color: #313237;
+    color: $color__header-active-link;
     margin-bottom: 24px;
     width: 50%;
 
