@@ -27,8 +27,8 @@ export const TabletsPage = () => {
   const getTabletsFromServer = async (searchParam) => {
     setIsLoading(true);
     try {
-      const { amount, tablets } = await getTabletsData(searchParam);
-      setPhones(tablets);
+      const { amount, productsByCategory } = await getTabletsData(searchParam);
+      setPhones(productsByCategory);
       setPhonesAmount(amount);
     } catch {
       setHasError(true);
