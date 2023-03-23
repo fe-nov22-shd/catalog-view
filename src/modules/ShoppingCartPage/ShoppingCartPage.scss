@@ -167,3 +167,16 @@ margin-bottom: 16px;
     color: #af5b5e;
   }
 }
+
+.order__list .cart-page__total-count {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  line-height: 20px;
+}
+.cart-page__total-count div {
+  display: flex;
+  justify-content: space-between;
+  width: 25px;
+  gap: 5px;
+}
