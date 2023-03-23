@@ -11,13 +11,15 @@ type Props = {
 
 export const Recommendation: React.FC<Props> = ({ recommendation }) => {
   return (
-    <section className="recommendation">
-      <h3 className="recommendation__title">You may also like</h3>
-      <PhoneSlider>
-        {recommendation.map((phone) => (
-          <ProductCard key={phone.id} phone={phone} />
-        ))}
-      </PhoneSlider>
-    </section>
+    <div className="recommendation-container">
+      <section className="recommendation">
+        <h3 className="recommendation__title">You may also like</h3>
+        <PhoneSlider>
+          {recommendation.map((phone) => (
+            <ProductCard key={phone.id} phone={phone} />
+          ))}
+        </PhoneSlider>
+      </section>
+    </div>
   );
 };

@@ -1,5 +1,5 @@
 import './ProductPictureSelect.scss';
-import {Grid} from '@mui/material';
+
 import cn from 'classnames';
 import React, {useEffect, useState} from 'react';
 
@@ -17,6 +17,7 @@ export const ProductPictureSelect: React.FC<Props> = ({ images }) => {
     <div className="product-info__images-container">
       <div className="product-info__images-list">
         {images.map(image => (
+          // eslint-disable-next-line jsx-a11y/anchor-is-valid
           <a
             key={image}
             className={cn('product-info__image-link', {

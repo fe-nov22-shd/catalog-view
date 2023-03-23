@@ -69,6 +69,7 @@
     font-size: 12px;
     color: $color__header-link;
     cursor: pointer;
+
     &:hover {
       color:$color__header-active-link;
     }
@@ -107,9 +108,16 @@
 @media screen and (max-width: 639px) and (min-width: 220px) {
   .container {
     display: block;
+    padding: 16px;
   }
   .scroll {
     justify-content: center;
-    padding: 32px 16px;
+    padding: 16px 16px;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 640px) {
+  .container {
+    padding: 24px;
   }
 }
