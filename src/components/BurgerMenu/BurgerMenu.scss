@@ -58,6 +58,11 @@
 
     cursor: pointer;
   }
+
+  & .nav__link {
+    padding-bottom: 8px;
+  }
+  
   & .nav__item:last-child{
     margin-bottom: 0;
   }

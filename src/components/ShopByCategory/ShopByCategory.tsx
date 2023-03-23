@@ -3,26 +3,32 @@ import Grid from "@mui/material/Grid";
 import './ShopByCategory.scss';
 import { CategoryCard } from '../CategoryCard';
 import { getPhonesData } from '../../api/getPhonesData';
+import { getTabletsData } from '../../api/getPhonesData';
 
 import categoryPhonesImg from "../../img/categories/category-phones.jpg";
 import categoryTabletsImg from "../../img/categories/category-tablets.jpg";
 import categoryAccessoriesImg from "../../img/categories/category-accessories.jpg";
 
 export const ShopByCategory: React.FC = () => {
-  const [amount, setAmount] = useState(0);
+  const [phonesAmount, setPhonesAmount] = useState(0);
+  const [tabletsAmount, setTabletsAmount] = useState(0);
+  const [accessoriesAmount, setAccessoriesAmount] = useState(0);
 
-  const getPhonesFromServer = async (searchParam) => {
+  const getData = async (searchParam) => {
     try {
-      const { amount } = await getPhonesData(searchParam);
-      setAmount(amount);
+      const phones = await getPhonesData(searchParam);
+      const tablets = await getTabletsData(searchParam);
+      setPhonesAmount(phones.amount);
+      setTabletsAmount(tablets.amount);
     } catch {
-      setAmount(0);
+      setPhonesAmount(0);
+      setTabletsAmount(0);
     }
   };
 
-    useEffect(() => {
-      getPhonesFromServer('');
-    }, []);
+  useEffect(() => {
+    getData('');
+  }, []);
 
   return (
     <section className="categories">
@@ -34,16 +40,16 @@ export const ShopByCategory: React.FC = () => {
             link="/phones"
             image={categoryPhonesImg}
             title="Mobile phones"
-            amount={+amount}
+            amount={+phonesAmount}
           />
-      </Grid>
+        </Grid>
 
         <Grid item tablet={4} tabletXL={4} desktop={4} mobile={12}>
           <CategoryCard
             link="/tablets"
             image={categoryTabletsImg}
             title="Tablets"
-            amount={24}
+            amount={+tabletsAmount}
           />
         </Grid>
 
@@ -52,7 +58,7 @@ export const ShopByCategory: React.FC = () => {
             link="/accessories"
             image={categoryAccessoriesImg}
             title="Accessories"
-            amount={100}
+            amount={+accessoriesAmount}
           />
         </Grid>
       </Grid>

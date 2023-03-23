@@ -7,7 +7,8 @@ import { Loader } from "../Loader";
 import { CatalogContent } from '../CatalogContent';
 import { Phone } from '../../types/Phone';
 import { PaginationBlock } from '../PaginationBlock';
-
+import { title } from 'process';
+import { CategotyTitle } from '../../types/CategoryTitle';
 
 type Props = {
   isLoading: boolean;
@@ -20,8 +21,8 @@ type Props = {
   getCurrentPage: (a:string) => void,
   currentPage:string;
   getSortingType: (a:string) => void,
-  sortingType: string
-
+  sortingType: string,
+  title: CategotyTitle,
 }
 export const Catalog: React.FC<Props> = ({
   isLoading,
@@ -35,14 +36,14 @@ export const Catalog: React.FC<Props> = ({
   currentPage,
   getSortingType,
   sortingType,
+  title,
 }) => {
   const isPaginationShown = (itemsOnPage !== '');
 
   return (
     <div className="Catalog">
-      <h1 className="Catalog__title">Mobile phones</h1>
+      <h1 className="Catalog__title">{title}</h1>
       <h2 className="Catalog__items-count"> {phonesAmount} models </h2>
-
 
       <SortingPanel
         getNumberOfItems={getNumberOfItems}

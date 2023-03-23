@@ -10,6 +10,8 @@ import { FavoritesPage } from './modules/FavoritesPage';
 import { NotFoundPage } from './modules/NotFoundPage';
 import { ShoppingCartPage } from './modules/ShoppingCartPage';
 import { ProductDetailsPage } from './modules/ProductDetailsPage';
+import { ContactUs } from './modules/ContactUsPage/ContactUs';
+import { RightsPage } from './modules/RightsPage/Rights';
 
 import { Footer } from '../src/components/Footer/Footer';
 import { Header } from "../src/components/Header/Header";
@@ -40,6 +42,8 @@ export const App = () => {
 
             <Route path="home" element={<Navigate to="/" replace />} />
 
+            <Route path="contact_us" element={<ContactUs />} />
+            <Route path="rights" element={<RightsPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>

@@ -1,0 +1,33 @@
+
+.rights-block{
+  max-width: 800px;
+  margin: 20px auto;
+  border:  1px solid #E2E6E9;
+  padding: 20px;
+  
+  &__title {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 41px;
+    letter-spacing: -0.01em;
+    padding: 0 16px 0 16px;
+    color:#313237;
+  }
+
+&__text {
+    display: flex;
+    text-align: start;
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #89939A;
+    padding: 0 16px 0 16px;
+}
+}

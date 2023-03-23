@@ -1,0 +1,41 @@
+@import '../../generalStyles/colors.scss';
+@import '../../generalStyles/mixins.scss';
+
+.recommendation-container {
+  margin-bottom: 56px;
+
+  @include onTablet {
+    margin-bottom: 64px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 81px;
+  }
+}
+
+.recommendation {
+  padding-left: 16px;
+
+  @include onTablet {
+    padding-left: 24px;
+  }
+
+  @include onDesktop {
+    padding: 0 32px;
+  }
+
+  &__title {
+    color: $color__header-active-link;
+    font-weight: 800;
+    font-size: 22px;
+    margin-bottom: 24px;
+
+      @include onTablet {
+    font-size: 32px;
+  }
+
+  }
+  & .slick-arrow {
+    top: -44px;
+  }
+}
