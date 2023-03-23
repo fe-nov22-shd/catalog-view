@@ -10,6 +10,7 @@ type Props = {
 
 function Arrow(props) {
   const { className, onClick } = props;
+
   return <div className={className} onClick={onClick} />;
 }
 
@@ -87,11 +88,9 @@ export const PhoneSlider: React.FC<Props> = ({ children }) => {
   };
 
   return (
-    <>
-      <Slider {...settings} className="phone-slider">
-        {children}
-      </Slider>
-    </>
+    <Slider {...settings} className="phone-slider">
+      {children}
+    </Slider>
   );
 };
 

@@ -2,6 +2,7 @@
 @import "~slick-carousel/slick/slick-theme.scss";
 
 @import '../../generalStyles/mixins.scss';
+@import '../../generalStyles/colors.scss';
 
 .phone-slider {
   box-sizing: border-box;
@@ -18,7 +19,7 @@
     background-position: center;
 
     &:hover {
-      border: 1px solid #313237;
+      border: 1px solid $color__header-active-link;
     }
   }
 
@@ -41,12 +42,10 @@
 
   & .slick-prev::before {
     content: '';
-    background-image: url('../../img/banner-prev.svg');
   }
 
   & .slick-next::before {
     content: '';
-    background-image: url('../../img/banner-next.svg');
   }
 
   & .container__width {
