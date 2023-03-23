@@ -5,7 +5,7 @@ import {LocaleStorageContext} from '../../../Context';
 import {ColorSelect} from './ColorSelect';
 import {CapacitySelect} from './CapacitySelect';
 import {CartAdnFavoritesButtons} from './CartAndFavoritesButtons';
-import {getProductByProductId} from '../../../../api/getPhonesData';
+import {getProductByProductId} from '../../../../api/getProductsData';
 import {SpecSummary} from './SpecSummary';
 
 type Props = {

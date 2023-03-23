@@ -3,9 +3,9 @@ import {useEffect, useState} from 'react';
 import { useLocation } from 'react-router-dom';
 import { ProductInfoType } from '../../types/ProductInfoType';
 import { ProductInfo } from '../../components/ProductInfo';
-import { getProductInfo } from '../../api/getPhonesData';
+import { getProductInfo } from '../../api/getProductsData';
 import { getProductId } from '../../utils/getProductId';
-import { getRelevant } from '../../api/getPhonesData';
+import { getRelevant } from '../../api/getProductsData';
 import { Phone } from '../../types/Phone';
 import { Recommendation } from '../../components/Recommendation';
 
