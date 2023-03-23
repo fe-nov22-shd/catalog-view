@@ -38,7 +38,6 @@ export const Catalog: React.FC<Props> = ({
   title,
 }) => {
   const isPaginationShown = (itemsOnPage !== '');
-
   return (
     <div className="Catalog">
       <h1 className="Catalog__title">{title}</h1>
@@ -54,18 +53,22 @@ export const Catalog: React.FC<Props> = ({
 
       {isLoading
         ? <Loader />
-        : (
-          <>
-            <CatalogContent products={products}/>
-            {isPaginationShown &&
-              <PaginationBlock
-                currentPage={currentPage}
-                numberOfPages={numberOfPages}
-                getCurrentPage={getCurrentPage}
-              />
-            }
-          </>
-        )
+        : ( products.length > 0
+            ? (
+              <>
+                <CatalogContent products={products} />
+                {isPaginationShown &&
+                  <PaginationBlock
+                    currentPage={currentPage}
+                    numberOfPages={numberOfPages}
+                    getCurrentPage={getCurrentPage}
+                  />
+                }
+              </>)
+            : (
+            <p className="Catalog__items-count">Items not found</p>
+            )
+          )
       }
     </div>
   );
