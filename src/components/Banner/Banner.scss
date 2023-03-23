@@ -2,6 +2,7 @@
 @import "~slick-carousel/slick/slick-theme.scss";
 
 @import '../../generalStyles/mixins.scss';
+@import '../../generalStyles/colors.scss';
 
 * {
   box-sizing: border-box;
@@ -21,7 +22,6 @@
     }
 
     & .slick-slide {
-      background-image: url('../../img/banner.jpeg');
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -30,16 +30,15 @@
 
       @include onTablet {
         height: 190px;
-        background-image: url('../../img/banner-640-1199.png');
       }
+
       @include onDesktop {
         height: 400px;
-        background-image: url('../../img/banner-desktop.jpeg');
       }
     }
 
     & .slick-arrow:hover {
-      border-color: #313237;
+      border-color: $color__header-active-link;
     }
 
     & .slick-arrow::before {
@@ -58,12 +57,12 @@
 
     & .slick-prev::before {
       content: '';
-      background-image: url('../../img/banner-prev.svg');
+      background-image: url('../../icons/banner-prev.svg');
     }
 
     & .slick-next::before {
       content: '';
-      background-image: url('../../img/banner-next.svg');
+      background-image: url('../../icons/banner-next.svg');
     }
 
     & .slick-list {
@@ -79,12 +78,12 @@
       content: "";
       width: 14px;
       height: 4px;
-      background-color: #313237;
+      background-color: $color__header-active-link;
       opacity: 0.25;
     }
 
     & .slick-dots li.slick-active button:before {
-      background-color: #313237;
+      background-color: $color__header-active-link;
       opacity: 0.75;
     }
 
@@ -110,4 +109,27 @@
       }
     }
   }
+}
+
+.slide-img1 {
+  background-image: url('../../img/banner/banner.jpeg');
+
+  @include onTablet {
+    background-image: url('../../img/banner/banner-640-1199.png');
+  }
+  @include onDesktop {
+    background-image: url('../../img/banner/banner-desktop.jpeg');
+  }
+}
+
+.slide-img2 {
+  background-image: url('../../img/banner/banner-accessories.png');
+}
+
+.slide-img3 {
+  background-image: url('../../img/banner/banner-tablets.png');
+}
+
+.slide-img4 {
+  background-image: url('../../img/banner/banner-phones.png');
 }

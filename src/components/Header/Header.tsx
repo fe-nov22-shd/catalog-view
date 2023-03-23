@@ -34,6 +34,7 @@ export const Header: React.FC = () => {
             <div className="header__logo">
               <Logo />
             </div>
+            
             <div className="header__nav">
               <Nav closeMenu={closeMenu} />
             </div>

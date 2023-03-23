@@ -13,7 +13,7 @@ export const CatalogContent:React.FC<Props> = ({ phones }) => {
     <div className="catalog-content">
       <Grid
         container
-        rowSpacing={1}
+        rowSpacing={4}
         columnSpacing={3}
         columns={{ tablet: 12, tabletXL: 12, desktop: 24, mobile: 4 }}
       >
