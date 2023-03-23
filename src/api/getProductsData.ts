@@ -7,6 +7,7 @@ const tablet = '/tablets';
 
 type Props = {
   amount: number;
+  phones: Phone[];
   productsByCategory: Phone[];
 };
 
