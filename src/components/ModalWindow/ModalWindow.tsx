@@ -1,9 +1,9 @@
+import './ModalWindow.scss';
 import { Modal, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { useContext } from "react";
 import { LocaleStorageContext } from "../Context";
 import cart from '../../img/cart_icon.png';
-import './ModalWindow.scss';
 
 type Props = {
   open: boolean;
@@ -12,7 +12,7 @@ type Props = {
   totalCost: number;
 };
 
-export const ModalWindow: React.FC<Props>= ({ open, setOpen, countItems, totalCost }) => {
+export const ModalWindow: React.FC<Props> = ({ open, setOpen, countItems, totalCost }) => {
   const { cartItems, setCartItems } = useContext(LocaleStorageContext)
 
   const handleClose = () => {

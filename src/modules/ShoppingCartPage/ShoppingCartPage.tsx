@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 import { CartItems } from '../../components/CartItems/CartItems';
 import { LocaleStorageContext } from "../../components/Context";
 import { Link } from 'react-router-dom';
-import { ModalWindow } from '../../components/ModalWindow';
+import { ModalWindow } from "../../components/ModalWindow";
 
 export const ShoppingCartPage: React.FC = () => {
   const [open, setOpen] = useState(false);
