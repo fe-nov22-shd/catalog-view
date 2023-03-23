@@ -18,7 +18,7 @@ export const ProductInfo: React.FC<Props> = ({ productInfo }) => {
         columnSpacing={{
           tablet: '24px',
           tabletXL: '24px',
-          desktop: '16px',
+          desktop: '64px',
           mobile: '16px'
         }}
         columns={{

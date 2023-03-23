@@ -1,4 +1,3 @@
-import React from 'react';
 import './App.scss';
 
 import { Routes, Route, Navigate } from 'react-router-dom';
@@ -28,6 +27,7 @@ export const App = () => {
               <Route index element={<PhonesPage />} />
 
               <Route path=":productId" element={<ProductDetailsPage />} />
+
             </Route>
 
             <Route path="tablets">
@@ -35,7 +35,7 @@ export const App = () => {
 
               <Route path=":productId" element={<ProductDetailsPage />} />
             </Route>
-            
+
             <Route path="accessories" element={<AccessoriesPage />} />
 
             <Route path="cart" element={<ShoppingCartPage />} />
