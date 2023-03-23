@@ -33,9 +33,10 @@ export const Banner: React.FC = () => {
   return (
     <div className="banner">
       <Slider {...settings}>
-        <div className='slick-slide'></div>
-        <div className='slick-slide'></div>
-        <div className='slick-slide'></div>
+        <div className='slick-slide slide-img1'></div>
+        <div className='slick-slide slide-img2'></div>
+        <div className='slick-slide slide-img3'></div>
+        <div className='slick-slide slide-img4'></div>
       </Slider>
     </div>
   );
