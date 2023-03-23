@@ -8,7 +8,6 @@ import { CatalogContent } from '../CatalogContent';
 import { Phone } from '../../types/Phone';
 import { PaginationBlock } from '../PaginationBlock';
 
-
 type Props = {
   isLoading: boolean;
   hasError:boolean;
@@ -42,7 +41,6 @@ export const Catalog: React.FC<Props> = ({
     <div className="Catalog">
       <h1 className="Catalog__title">Mobile phones</h1>
       <h2 className="Catalog__items-count"> {phonesAmount} models </h2>
-
 
       <SortingPanel
         getNumberOfItems={getNumberOfItems}
