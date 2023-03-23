@@ -26,6 +26,7 @@ $secondary-font-color: #89939a;
   gap: 30px;
   flex-wrap: wrap;
   padding-top: 20px;
+  padding-bottom: 20px;
   align-items: center;
   justify-content: center;
 
@@ -58,7 +59,7 @@ $secondary-font-color: #89939a;
       font-style: normal;
       font-weight: 800;
     }
-    
+
     &-link {
       display: flex;
       justify-content: space-between;
