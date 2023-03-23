@@ -88,7 +88,7 @@ export const ShoppingCartPage: React.FC = () => {
                     <ul className="order__list">
                     {cartItems.map(cart => (
                       <li className="cart-page__total-count" key={cart.good.id}>
-                        {cart.good.name}
+                        {cart.good.name}    x {cart.count}
                       </li>))}
 
                     </ul>
