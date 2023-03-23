@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.css": "/catalog-view/static/css/main.272b86fe.css",
-    "main.js": "/catalog-view/static/js/main.a7bddc63.js",
+    "main.css": "/catalog-view/static/css/main.c012a4d4.css",
+    "main.js": "/catalog-view/static/js/main.955a986e.js",
     "static/media/banner-desktop.jpeg": "/catalog-view/static/media/banner-desktop.5ee429b1dda9e78a56f6.jpeg",
     "static/media/banner.jpeg": "/catalog-view/static/media/banner.330ccefb220f2ef63b51.jpeg",
+    "static/media/banner-phones.png": "/catalog-view/static/media/banner-phones.b4eeda8bd82b712057a2.png",
     "static/media/logo.svg": "/catalog-view/static/media/logo.0909646ca933dccfb4150fb11fa0a24f.svg",
+    "static/media/banner-tablets.png": "/catalog-view/static/media/banner-tablets.a962057c1043a08f7737.png",
     "static/media/Error.gif": "/catalog-view/static/media/Error.2d3d08a8ba669f486d6d.gif",
     "static/media/Mont-Regular.otf": "/catalog-view/static/media/Mont-Regular.1d26d89f7339866d3133.otf",
     "static/media/Mont-SemiBold.otf": "/catalog-view/static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
     "static/media/Mont-Bold.otf": "/catalog-view/static/media/Mont-Bold.03c8c2f6127c1da0fc39.otf",
     "static/media/category-phones.jpg": "/catalog-view/static/media/category-phones.5745f0cd09b6406ae00c.jpg",
     "static/media/category-accessories.jpg": "/catalog-view/static/media/category-accessories.3b9d45fd64fcb701d380.jpg",
+    "static/media/banner-accessories.png": "/catalog-view/static/media/banner-accessories.bdd2e0fca0159e52f41c.png",
     "static/media/category-tablets.jpg": "/catalog-view/static/media/category-tablets.05b3d251e09da4a22098.jpg",
     "static/media/banner-640-1199.png": "/catalog-view/static/media/banner-640-1199.6c10d00375dc24ea760f.png",
     "static/media/4.jpg": "/catalog-view/static/media/4.f2a012ff7c1dc610b6b5.jpg",
@@ -40,11 +43,11 @@
     "static/media/arrow-down-icon.svg": "/catalog-view/static/media/arrow-down-icon.98c9dd6d98b47f2f1977e301cf0fa429.svg",
     "static/media/banner-prev.svg": "/catalog-view/static/media/banner-prev.52b1de8135fb515af2ee.svg",
     "index.html": "/catalog-view/index.html",
-    "main.272b86fe.css.map": "/catalog-view/static/css/main.272b86fe.css.map",
-    "main.a7bddc63.js.map": "/catalog-view/static/js/main.a7bddc63.js.map"
+    "main.c012a4d4.css.map": "/catalog-view/static/css/main.c012a4d4.css.map",
+    "main.955a986e.js.map": "/catalog-view/static/js/main.955a986e.js.map"
   },
   "entrypoints": [
-    "static/css/main.272b86fe.css",
-    "static/js/main.a7bddc63.js"
+    "static/css/main.c012a4d4.css",
+    "static/js/main.955a986e.js"
   ]
 }
