@@ -25,20 +25,20 @@ $secondary-font-color: #89939a;
   width: 100%;
   gap: 30px;
   flex-wrap: wrap;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding-top: 20px;
   align-items: center;
   justify-content: center;
 
   &__card {
-
     display: flex;
     flex-direction: column;
+    justify-self: center;
     justify-content: center;
     align-items: center;
     flex-basis: 20%;
     height: 300px;
     border: 1px solid #E2E6E9;;
+
     &:hover {
       box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
     }
@@ -58,6 +58,7 @@ $secondary-font-color: #89939a;
       font-style: normal;
       font-weight: 800;
     }
+    
     &-link {
       display: flex;
       justify-content: space-between;

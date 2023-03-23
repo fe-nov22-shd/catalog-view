@@ -42,23 +42,44 @@ export const PhoneSlider: React.FC<Props> = ({ children }) => {
     ),
     responsive: [
       {
-        breakpoint: 1200,
+        breakpoint: 1440,
         settings: {
           slidesToShow: 4,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 640,
+        breakpoint: 1199,
         settings: {
-          slidesToShow: 2.3,
+          slidesToShow: 3.5,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 320,
+        breakpoint: 999,
         settings: {
-          slidesToShow: 1.3,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2.5,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 639,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1.5,
           slidesToScroll: 1,
         },
       },
