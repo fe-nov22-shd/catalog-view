@@ -27,11 +27,15 @@ export const App = () => {
             <Route path="phones">
               <Route index element={<PhonesPage />} />
 
-              <Route path=":phoneId" element={<ProductDetailsPage />} />
+              <Route path=":productId" element={<ProductDetailsPage />} />
             </Route>
 
-            <Route path="tablets" element={<TabletsPage />} />
+            <Route path="tablets">
+              <Route index element={<TabletsPage />} />
 
+              <Route path=":productId" element={<ProductDetailsPage />} />
+            </Route>
+            
             <Route path="accessories" element={<AccessoriesPage />} />
 
             <Route path="cart" element={<ShoppingCartPage />} />

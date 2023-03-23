@@ -7,13 +7,12 @@ import { Loader } from "../Loader";
 import { CatalogContent } from '../CatalogContent';
 import { Phone } from '../../types/Phone';
 import { PaginationBlock } from '../PaginationBlock';
-import { title } from 'process';
-import { CategotyTitle } from '../../types/CategoryTitle';
 
 type Props = {
+  title:string;
   isLoading: boolean;
   hasError:boolean;
-  phones: Phone[]
+  products: Phone[]
   phonesAmount: number,
   itemsOnPage:string;
   getNumberOfItems: (a:string) => void;
@@ -21,13 +20,13 @@ type Props = {
   getCurrentPage: (a:string) => void,
   currentPage:string;
   getSortingType: (a:string) => void,
-  sortingType: string,
-  title: CategotyTitle,
+  sortingType: string
+
 }
 export const Catalog: React.FC<Props> = ({
   isLoading,
   hasError, // need to add notification
-  phones,
+  products,
   phonesAmount,
   itemsOnPage,
   getNumberOfItems,
@@ -57,7 +56,7 @@ export const Catalog: React.FC<Props> = ({
         ? <Loader />
         : (
           <>
-            <CatalogContent phones={phones}/>
+            <CatalogContent products={products}/>
             {isPaginationShown &&
               <PaginationBlock
                 currentPage={currentPage}

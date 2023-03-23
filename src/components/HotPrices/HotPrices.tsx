@@ -3,7 +3,7 @@ import { Phone } from '../../types/Phone';
 
 import { ProductCard } from '../productCard';
 import { PhoneSlider } from '../PhoneSlider';
-import { getHotPricePhones } from '../../api/getPhonesData';
+import { getHotPricePhones } from '../../api/getProductsData';
 
 import './HotPrices.scss';
 

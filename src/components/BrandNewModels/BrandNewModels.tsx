@@ -3,7 +3,7 @@ import { Phone } from "../../types/Phone";
 
 import { ProductCard } from "../productCard";
 import { PhoneSlider } from "../PhoneSlider";
-import { getNewestPhones } from '../../api/getPhonesData';
+import { getNewestPhones } from '../../api/getProductsData';
 
 import "./BrandNewModels.scss";
 

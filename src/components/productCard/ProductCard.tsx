@@ -5,7 +5,8 @@ import {ReactComponent as Heart} from '../../img/heart.svg';
 import { Phone } from '../../types/Phone';
 import { useState } from 'react';
 import { LocaleStorageContext } from '../Context';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { ProductSpec } from '../ProductInfo/ProductDescription/productSpec';
 
 type Props = {
   phone: Phone,
@@ -26,6 +27,7 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
 
   const {
     id,
+    category,
     phoneId,
     image,
     name,
@@ -54,6 +56,15 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
       : addToFavoruite(phone)
     };
 
+  const location = useLocation();
+  let pathname = location.pathname;
+
+  if (pathname === '/') {
+    pathname = category === 1
+      ? 'phones'
+      : 'tablets'
+    }
+
   useEffect (()=> {
     setIsFavoriteClicked(false)
     setIsCartClicked(false)
@@ -62,7 +73,7 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
   return (
     <div className="product-card container__width">
       <Link
-        to={`/phones/${phoneId}`}
+        to={`${pathname}/${phoneId}`}
         className="product-card__image-container"
       >
         <img
@@ -71,6 +82,7 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
           className="product-card__image"
         />
       </Link>
+
       <h1 className="product-card__title">
         {name}
       </h1>
