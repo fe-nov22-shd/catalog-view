@@ -33,11 +33,12 @@ export const ProductDetailsPage = () => {
   }, [productId]);
 
   return (
-    <>
+    <div className="product-details-page">
       <Breadcrumbs />
       {productInfo && <ProductInfo productInfo={productInfo} />}
 
-      {recommendation.length > 0 && <Recommendation recommendation={recommendation} />}
-    </>
+      {recommendation.length > 0 && <Recommendation recommendation={recommendation} />
+      }
+    </div>
   );
 };

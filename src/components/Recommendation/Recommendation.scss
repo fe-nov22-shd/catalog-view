@@ -1,6 +1,18 @@
 @import '../../generalStyles/colors.scss';
 @import '../../generalStyles/mixins.scss';
 
+.recommendation-container {
+  margin-bottom: 56px;
+
+  @include onTablet {
+    margin-bottom: 64px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 81px;
+  }
+}
+
 .recommendation {
   padding-left: 16px;
 

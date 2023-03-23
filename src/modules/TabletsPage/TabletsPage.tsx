@@ -9,6 +9,7 @@ import { NumberOfItems } from '../../types/NumberOfItemsOnPage';
 import { getSearchWith } from '../../utils/searchHelper';
 import { getNumberOfPages } from '../../utils/getNumberOfPages';
 import { Sort } from '../../types/Sort';
+import { CategotyTitle } from '../../types/CategoryTitle';
 
 export const TabletsPage = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -66,6 +67,7 @@ export const TabletsPage = () => {
     <>
       <Breadcrumbs />
       <Catalog
+        title={CategotyTitle.Tablets}
         isLoading={isLoading}
         hasError={hasError}
         phones={phones}
