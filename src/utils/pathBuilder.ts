@@ -1,7 +1,6 @@
 export const pathBuilder = (pathName: string, category:number) => {
 
   if (pathName === '/') {
-    console.log(category);
     pathName = category === 1
       ? 'phones'
       : 'tablets'
@@ -13,6 +12,6 @@ export const pathBuilder = (pathName: string, category:number) => {
         pathName = 'phones'
       }
     }
-    
+
     return pathName;
 };
