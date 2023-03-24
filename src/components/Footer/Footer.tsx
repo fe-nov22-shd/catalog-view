@@ -17,7 +17,7 @@ export const  Footer = () => {
           <img onClick={handleScrollToTop} src={logo} alt="Logo" />
         </div>
         <nav className="footer__navigation navigation">
-              <Link className='navigation__link' to="https://github.com/fe-nov22-shd/catalog-view" target="_blank">GitHub</Link>
+              <Link className='navigation__link' to="https://github.com/orgs/fe-nov22-shd/repositories" target="_blank">GitHub</Link>
               <Link className='navigation__link' to="/contact_us">Contacts</Link>
               <Link className='navigation__link' to="/rights">Rights</Link>
         </nav>

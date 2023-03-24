@@ -96,7 +96,7 @@ export const SortingPanel:React.FC<Props> = ({
         <Grid
           item
           tablet={12}
-          tabletXL={4}
+          tabletXL={5}
           desktop={17}
           mobile={4}
         >
