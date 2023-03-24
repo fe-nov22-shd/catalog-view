@@ -5,8 +5,10 @@ import {ReactComponent as Heart} from '../../img/heart.svg';
 import { Phone } from '../../types/Phone';
 import { useState } from 'react';
 import { LocaleStorageContext } from '../Context';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { ProductSpec } from '../ProductInfo/ProductDescription/productSpec';
+import { pathBuilder } from '../../utils/pathBuilder';
+
 
 type Props = {
   phone: Phone,
@@ -15,6 +17,7 @@ type Props = {
 export const ProductCard: React.FC<Props> = ({ phone }) => {
   const [isCartClicked, setIsCartClicked] = useState(false);
   const [isFavoriteClicked, setIsFavoriteClicked] = useState(false);
+  const [path, setPath] = useState('/')
 
   const {
     favoruites,
@@ -27,7 +30,7 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
 
   const {
     id,
-    category,
+    categoryId,
     phoneId,
     image,
     name,
@@ -57,23 +60,19 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
     };
 
   const location = useLocation();
-  let pathname = location.pathname;
+  let pathName = location.pathname;
 
-  if (pathname === '/') {
-    pathname = category === 1
-      ? 'phones'
-      : 'tablets'
-    }
 
   useEffect (()=> {
-    setIsFavoriteClicked(false)
-    setIsCartClicked(false)
+    setIsFavoriteClicked(false);
+    setIsCartClicked(false);
   }, [isFavoriteClicked, isCartClicked])
 
   return (
     <div className="product-card container__width">
+
       <Link
-        to={`${pathname}/${phoneId}`}
+        to={`/${pathBuilder( pathName, categoryId)}/${phoneId}`}
         className="product-card__image-container"
       >
         <img
@@ -82,7 +81,6 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
           className="product-card__image"
         />
       </Link>
-
       <h1 className="product-card__title">
         {name}
       </h1>

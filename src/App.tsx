@@ -14,6 +14,7 @@ import { RightsPage } from './modules/RightsPage/Rights';
 
 import { Footer } from '../src/components/Footer/Footer';
 import { Header } from "../src/components/Header/Header";
+import React from 'react';
 
 export const App = () => {
   return (

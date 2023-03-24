@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import './PhonesPage.scss'
 import { Breadcrumbs } from "../Breadcrumbs/Breadcrumbs";
 import { Catalog } from '../../components/Catalog';
@@ -24,7 +23,6 @@ export const PhonesPage = () => {
   const [currentPage, setCurrentPage] = useState('1');
 
   const [searchParams, setSearchParams] = useSearchParams();
-
 
   const getPhonesFromServer = async (searchParam) => {
     setIsLoading(true);
@@ -62,11 +60,12 @@ export const PhonesPage = () => {
 
   useEffect(() => {
     applyPaginationQuery(sortingType, currentPage, itemsOnPage);
-  }, [itemsOnPage, sortingType, currentPage]);
+  }, []);
 
   useEffect(() => {
+    applyPaginationQuery(sortingType, currentPage, itemsOnPage);
     getPhonesFromServer(searchQuery);
-  }, [searchQuery]);
+  }, [itemsOnPage, sortingType, currentPage, searchQuery]);
 
   return (
     <>
@@ -76,7 +75,7 @@ export const PhonesPage = () => {
       isLoading={isLoading}
       hasError={hasError}
       products={phones}
-      phonesAmount={phonesAmount}
+      productsAmount={phonesAmount}
       getNumberOfItems={getNumberOfItems}
       itemsOnPage={itemsOnPage}
       numberOfPages={numberOfPages}

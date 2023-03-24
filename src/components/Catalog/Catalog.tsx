@@ -15,7 +15,7 @@ type Props = {
   isLoading: boolean;
   hasError:boolean;
   products: Phone[]
-  phonesAmount: number,
+  productsAmount: number,
   itemsOnPage:string;
   getNumberOfItems: (a:string) => void;
   numberOfPages: number;
@@ -29,7 +29,7 @@ export const Catalog: React.FC<Props> = ({
   isLoading,
   hasError, // need to add notification
   products,
-  phonesAmount,
+  productsAmount,
   itemsOnPage,
   getNumberOfItems,
   numberOfPages,
@@ -42,13 +42,13 @@ export const Catalog: React.FC<Props> = ({
 
   const isPaginationShowm = itemsOnPage !== '' && (
     (products.length > +itemsOnPage) ||
-    (phonesAmount > +itemsOnPage)
+    (productsAmount > +itemsOnPage)
   );
 
   return (
     <div className="Catalog">
       <h1 className="Catalog__title">{title}</h1>
-      <h2 className="Catalog__items-count"> {phonesAmount} models </h2>
+      <h2 className="Catalog__items-count"> {productsAmount} models </h2>
 
       <SortingPanel
         getNumberOfItems={getNumberOfItems}
