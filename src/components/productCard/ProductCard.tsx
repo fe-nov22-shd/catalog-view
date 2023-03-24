@@ -5,7 +5,7 @@ import {ReactComponent as Heart} from '../../img/heart.svg';
 import { Phone } from '../../types/Phone';
 import { useState } from 'react';
 import { LocaleStorageContext } from '../Context';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { ProductSpec } from '../ProductInfo/ProductDescription/productSpec';
 
 type Props = {
@@ -72,16 +72,33 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
 
   return (
     <div className="product-card container__width">
-      <Link
-        to={`${pathname}/${phoneId}`}
-        className="product-card__image-container"
-      >
-        <img
-          src={image}
-          alt={name}
-          className="product-card__image"
-        />
-      </Link>
+
+      {category === 1
+        ?(
+        <NavLink
+          to={`phones/${phoneId}`}
+          className="product-card__image-container"
+        >
+          <img
+            src={image}
+            alt={name}
+            className="product-card__image"
+          />
+        </NavLink>
+        )
+        :(
+        <NavLink
+          to={`tablets/${phoneId}`}
+          className="product-card__image-container"
+        >
+          <img
+            src={image}
+            alt={name}
+            className="product-card__image"
+          />
+        </NavLink>
+        )
+      }
 
       <h1 className="product-card__title">
         {name}
