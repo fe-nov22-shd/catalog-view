@@ -15,8 +15,8 @@ export const TabletsPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
 
-  const [tablets, setPhones] = useState<Phone[]>([]);
-  const [phonesAmount, setPhonesAmount] = useState(0);
+  const [tablets, setTablets] = useState<Phone[]>([]);
+  const [tabletsAmount, setPhonesAmount] = useState(0);
 
   const [sortingType, setSortingType] = useState<Sort|''>('');
   const [itemsOnPage, setItemsOnPage] = useState<NumberOfItems>('16')
@@ -28,7 +28,7 @@ export const TabletsPage = () => {
     setIsLoading(true);
     try {
       const { amount, productsByCategory } = await getTabletsData(searchParam);
-      setPhones(productsByCategory);
+      setTablets(productsByCategory);
       setPhonesAmount(amount);
     } catch {
       setHasError(true);
@@ -52,7 +52,7 @@ export const TabletsPage = () => {
 
   const location = useLocation();
   const searchQuery = location.search;
-  const numberOfPages = getNumberOfPages(phonesAmount, itemsOnPage);
+  const numberOfPages = getNumberOfPages(tabletsAmount, itemsOnPage);
 
   const getNumberOfItems = (value) => setItemsOnPage(value);
   const getCurrentPage = (value) => setCurrentPage(value);
@@ -60,9 +60,12 @@ export const TabletsPage = () => {
 
   useEffect(() => {
     applyPaginationQuery(sortingType, currentPage, itemsOnPage);
-    getTabletsFromServer(searchQuery);
-  }, [sortingType, searchQuery, itemsOnPage, currentPage]);
+  }, []);
 
+  useEffect(() => {
+    applyPaginationQuery(sortingType, currentPage, itemsOnPage);
+    getTabletsFromServer(searchQuery);
+  }, [itemsOnPage, sortingType, currentPage, searchQuery]);
   return (
     <>
       <Breadcrumbs />
@@ -71,7 +74,7 @@ export const TabletsPage = () => {
         isLoading={isLoading}
         hasError={hasError}
         products={tablets}
-        phonesAmount={phonesAmount}
+        productsAmount={tabletsAmount}
         getNumberOfItems={getNumberOfItems}
         itemsOnPage={itemsOnPage}
         numberOfPages={numberOfPages}

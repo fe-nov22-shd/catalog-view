@@ -1,21 +1,18 @@
-import { useLocation } from "react-router";
+export const pathBuilder = (pathName: string, category:number) => {
 
-export const PathBuilder = (category) => {
-  const location = useLocation();
-  let pathname = location.pathname;
-
-  if (pathname === '/') {
-    pathname = category === 1
+  if (pathName === '/') {
+    console.log(category);
+    pathName = category === 1
       ? 'phones'
       : 'tablets'
     } else {
-      if (pathname.includes('tablets')) {
-        pathname = 'tablets'
+      if (pathName.includes('tablets')) {
+        pathName = 'tablets'
       }
-      if (pathname.includes('phones')) {
-        pathname = 'phones'
+      if (pathName.includes('phones')) {
+        pathName = 'phones'
       }
     }
-
-    return pathname;
+    
+    return pathName;
 };
