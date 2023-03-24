@@ -3,16 +3,21 @@
 
 .container__width {
   display: flex;
-  margin: auto;
   justify-content: center;
   border: #89939a;
   box-sizing: border-box;
 
-  width: 220px;
+  width: 95%;
 
   @include onTablet {
-  max-width: 280px;
+  width: 100%;
+  // max-width: 280px;
   }
+
+  @include onDesktop {
+    width: 100%;
+    max-width: 280px;
+    }
 
 }
 
@@ -41,6 +46,7 @@
     height: 200px;
     display: flex;
     justify-content: center;
+    align-items: center;
 
     margin-bottom:  24px;
   }

@@ -14,7 +14,7 @@ export const CatalogContent:React.FC<Props> = ({ products }) => {
       <Grid
         container
         rowSpacing={4}
-        columnSpacing={3}
+        columnSpacing={{ tablet: '24px', tabletXL: '24px', desktop: '16px', mobile: '16px' }}
         columns={{ tablet: 12, tabletXL: 12, desktop: 24, mobile: 4 }}
       >
         {products.map(phone => {
