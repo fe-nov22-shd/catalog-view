@@ -3,34 +3,38 @@ $secondary-color: #89939a;
 $icons-color: #b4bdc3;
 
 .input {
-  max-width: 100%;
-  width: 100%;
-  background-color: white;
-  border: 1px solid $icons-color;
-  outline: none;
-  font-family: 'Mont';
-  font-weight: 600;
-  font-size: 14px;
-  color: $primary-color;
-  padding: 9.5px;
-  margin-top: 15px;
+  position: relative;
 
-  &::placeholder {
-    color: $secondary-color;
+  &__area {
+    max-width: 100%;
+    width: 100%;
+    background-color: white;
+    border: 1px solid $icons-color;
+    outline: none;
+    font-family: 'Mont';
+    font-weight: 600;
+    font-size: 14px;
+    color: $primary-color;
+    padding: 9.5px;
+    margin-top: 15px;
+
+    &::placeholder {
+      color: $secondary-color;
+    }
+
+    &:hover {
+      border-color: $secondary-color;
+    }
+
+    &:focus {
+      border-color: $primary-color;
+    }
   }
 
-  &:hover {
-    border-color: $secondary-color;
-  }
-
-  &:focus {
-    border-color: $primary-color;
-  }
-
-   &__clear {
-    position: relative;
-    top: -28px;
-    right: 10px;
+  &__clear {
+    position: absolute;
+    top: 27px;
+    right: 11px;
     font-size: 20px;
     line-height: 1;
     font-family: "Mont",sans-serif;

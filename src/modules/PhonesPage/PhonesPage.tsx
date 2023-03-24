@@ -3,9 +3,9 @@ import './PhonesPage.scss'
 import { Breadcrumbs } from "../Breadcrumbs/Breadcrumbs";
 import { Catalog } from '../../components/Catalog';
 import { Phone } from '../../types/Phone';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
-import { getPhonesData } from '../../api/getPhonesData';
+import { getPhonesData } from '../../api/getProductsData';
 import { NumberOfItems } from '../../types/NumberOfItemsOnPage';
 import { getSearchWith } from '../../utils/searchHelper';
 import { getNumberOfPages } from '../../utils/getNumberOfPages';
@@ -21,16 +21,16 @@ export const PhonesPage = () => {
 
   const [sortingType, setSortingType] = useState<Sort|''>('');
   const [itemsOnPage, setItemsOnPage] = useState<NumberOfItems>('16')
-
   const [currentPage, setCurrentPage] = useState('1');
+
   const [searchParams, setSearchParams] = useSearchParams();
 
 
   const getPhonesFromServer = async (searchParam) => {
     setIsLoading(true);
     try {
-      const { amount, phones } = await getPhonesData(searchParam);
-      setPhones(phones);
+      const { amount, productsByCategory } = await getPhonesData(searchParam);
+      setPhones(productsByCategory);
       setPhonesAmount(amount);
     } catch {
       setHasError(true);
@@ -39,7 +39,11 @@ export const PhonesPage = () => {
     }
   };
 
-  const applyPaginationQuery = useCallback((
+  const getNumberOfItems = (value) => setItemsOnPage(value);
+  const getCurrentPage = (value) => setCurrentPage(value);
+  const getSortingType = (value) => setSortingType(value);
+
+  const applyPaginationQuery = (
     sortType: Sort| '',
     page:string,
     count:string
@@ -50,20 +54,19 @@ export const PhonesPage = () => {
           page: page,
           perPage: count || null,
         }
-    ))}, [searchParams]);
+    ))};
 
   const location = useLocation();
   const searchQuery = location.search;
   const numberOfPages = getNumberOfPages(phonesAmount, itemsOnPage);
 
-  const getNumberOfItems = (value) => setItemsOnPage(value);
-  const getCurrentPage = (value) => setCurrentPage(value);
-  const getSortingType = (value) => setSortingType(value);
-
   useEffect(() => {
     applyPaginationQuery(sortingType, currentPage, itemsOnPage);
+  }, [itemsOnPage, sortingType, currentPage]);
+
+  useEffect(() => {
     getPhonesFromServer(searchQuery);
-  }, [sortingType, searchQuery, itemsOnPage, currentPage]);
+  }, [searchQuery]);
 
   return (
     <>
@@ -72,7 +75,7 @@ export const PhonesPage = () => {
       title={CategotyTitle.Phones}
       isLoading={isLoading}
       hasError={hasError}
-      phones={phones}
+      products={phones}
       phonesAmount={phonesAmount}
       getNumberOfItems={getNumberOfItems}
       itemsOnPage={itemsOnPage}

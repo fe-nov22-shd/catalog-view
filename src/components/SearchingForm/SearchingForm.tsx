@@ -1,5 +1,5 @@
 import './SearchingForm.scss';
-import React, { ChangeEvent, useCallback, useState } from 'react';
+import React, { ChangeEvent, useCallback, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import debounce from 'lodash.debounce';
 import { getSearchWith } from '../../utils/searchHelper';
@@ -13,6 +13,15 @@ export const SearchingForm: React.FC = () => {
     [],
   );
 
+  const searchClean = getSearchWith(searchParams, { query: null });
+  const debouncedClearSearchParams = useCallback(
+    debounce(setSearchParams, 0),
+    [],
+  );
+  useEffect(() => {
+    debouncedClearSearchParams(searchClean);
+  }, []);
+
   const onQueryChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     setQuery(value);
@@ -22,9 +31,9 @@ export const SearchingForm: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="input">
       <input
-        className="input"
+        className="input__area"
         placeholder="Search"
         value={query}
         onChange={onQueryChange}

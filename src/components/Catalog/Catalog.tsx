@@ -7,13 +7,14 @@ import { Loader } from "../Loader";
 import { CatalogContent } from '../CatalogContent';
 import { Phone } from '../../types/Phone';
 import { PaginationBlock } from '../PaginationBlock';
-import { title } from 'process';
-import { CategotyTitle } from '../../types/CategoryTitle';
+import { NoItemOnSearch } from '../NoItemOnSearch'
+import { Error } from '../ErrorOnServer';
 
 type Props = {
+  title:string;
   isLoading: boolean;
   hasError:boolean;
-  phones: Phone[]
+  products: Phone[]
   phonesAmount: number,
   itemsOnPage:string;
   getNumberOfItems: (a:string) => void;
@@ -21,13 +22,13 @@ type Props = {
   getCurrentPage: (a:string) => void,
   currentPage:string;
   getSortingType: (a:string) => void,
-  sortingType: string,
-  title: CategotyTitle,
+  sortingType: string
+
 }
 export const Catalog: React.FC<Props> = ({
   isLoading,
   hasError, // need to add notification
-  phones,
+  products,
   phonesAmount,
   itemsOnPage,
   getNumberOfItems,
@@ -38,7 +39,11 @@ export const Catalog: React.FC<Props> = ({
   sortingType,
   title,
 }) => {
-  const isPaginationShown = (itemsOnPage !== '');
+
+  const isPaginationShowm = itemsOnPage !== '' && (
+    (products.length > +itemsOnPage) ||
+    (phonesAmount > +itemsOnPage)
+  );
 
   return (
     <div className="Catalog">
@@ -53,21 +58,28 @@ export const Catalog: React.FC<Props> = ({
         getCurrentPage={getCurrentPage}
       />
 
-      {isLoading
-        ? <Loader />
-        : (
-          <>
-            <CatalogContent phones={phones}/>
-            {isPaginationShown &&
-              <PaginationBlock
-                currentPage={currentPage}
-                numberOfPages={numberOfPages}
-                getCurrentPage={getCurrentPage}
-              />
-            }
-          </>
-        )
+      {isLoading && <Loader />}
+
+      {(isLoading && hasError) && (
+         <Error />
+      )}
+
+      {(!isLoading &&  products.length === 0) &&
+        <NoItemOnSearch />
       }
+
+      {(!isLoading &&  products.length > 0) && (
+        <>
+          <CatalogContent products={products} />
+          {isPaginationShowm &&
+            <PaginationBlock
+              currentPage={currentPage}
+              numberOfPages={numberOfPages}
+              getCurrentPage={getCurrentPage}
+            />
+          }
+        </>
+        )}
     </div>
   );
 }
