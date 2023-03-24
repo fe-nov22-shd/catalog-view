@@ -3,7 +3,7 @@ import './PhonesPage.scss'
 import { Breadcrumbs } from "../Breadcrumbs/Breadcrumbs";
 import { Catalog } from '../../components/Catalog';
 import { Phone } from '../../types/Phone';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import { getPhonesData } from '../../api/getProductsData';
 import { NumberOfItems } from '../../types/NumberOfItemsOnPage';
