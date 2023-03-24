@@ -3,11 +3,7 @@ display: flex;
 justify-content: flex-start;
 gap: 12px;
 margin-left: 16px;
-max-width: 100%;
-white-space: nowrap;
-text-overflow:  ellipsis;
-overflow: hidden;
-
+width:95%;
 }
 
 .breadcrumb-item {
@@ -54,3 +50,21 @@ overflow: hidden;
 .vector {
 padding-right: 12px;
 }
+
+
+  @media (max-width: 640px) {
+.actimel{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex-grow: 1;
+  width:95%;
+  height: 1.2em;
+  white-space: nowrap;
+}
+
+.link-width {
+  width:100px;
+  display: inline;
+}
+}
+
