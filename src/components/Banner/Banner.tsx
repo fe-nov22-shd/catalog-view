@@ -45,9 +45,33 @@ export const Banner: React.FC = () => {
         <div className="slick-slide slide-img3">
           <NavItem to="tablets" title="" />
         </div>
-        
+
         <div className="slick-slide slide-img4">
           <NavItem to="accessories" title="" />
+        </div>
+
+        <div className="slick-slide slide-img5">
+          <NavItem to="tablets" title="" />
+        </div>
+
+        <div className="slick-slide slide-img6">
+          <NavItem to="tablets" title="" />
+        </div>
+
+        <div className="slick-slide slide-img7">
+          <NavItem to="tablets" title="" />
+        </div>
+
+        <div className="slick-slide slide-img8">
+          <NavItem to="phones" title="" />
+        </div>
+
+        <div className="slick-slide slide-img9">
+          <NavItem to="phones" title="" />
+        </div>
+
+        <div className="slick-slide slide-img10">
+          <NavItem to="phones" title="" />
         </div>
       </Slider>
     </div>

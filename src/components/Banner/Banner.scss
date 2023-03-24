@@ -70,8 +70,13 @@
     }
 
     & .slick-dots {
+      display: none !important;
       bottom: -38px;
       left: 0;
+
+      @include onTablet {
+        display: block !important;
+      }
     }
 
     & .slick-dots li button:before {
@@ -132,4 +137,23 @@
 
 .slide-img4 {
   background-image: url('../../img/banner/banner-phones.png');
+}
+
+.slide-img5 {
+  background-image: url('../../img/banner/baner-ipad-01.png');
+}
+.slide-img6 {
+  background-image: url('../../img/banner/baner-ipad-02.png');
+}
+.slide-img7 {
+  background-image: url('../../img/banner/baner-ipad-03.png');
+}
+.slide-img8 {
+  background-image: url('../../img/banner/banner-iphone-01.png');
+}
+.slide-img9 {
+  background-image: url('../../img/banner/banner-iphone-02.png');
+}
+.slide-img10 {
+  background-image: url('../../img/banner/banner-iphone-03.png');
 }
