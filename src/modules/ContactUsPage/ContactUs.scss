@@ -38,10 +38,11 @@ $secondary-font-color: #89939a;
     align-items: center;
     flex-basis: 20%;
     height: 300px;
-    border: 1px solid #E2E6E9;;
+    border: 1px solid #E2E6E9;
+    transition:  box-shadow .3s ease;
 
     &:hover {
-      box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
+      box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.2);
     }
 
     &-description {
